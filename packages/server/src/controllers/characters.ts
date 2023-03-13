@@ -21,15 +21,6 @@ import {
 
 import logger from "../utils/logger";
 
-interface AllCharacterWeaponData {
-  [key: string]: {
-    weaponType: string;
-    signatureWeapon: number;
-    name: string;
-    icon: string;
-  };
-}
-
 export const getAllCharacters = async (req: Request<{}, {}>, res: Response) => {
   try {
     const response: CharacterData[] = getAllChatactersFromEnka();
@@ -92,16 +83,13 @@ export const getCharacterById = async (
       name: decryptTextAsset(name),
       nameId,
       affiliation: decryptTextAsset(characterData.details?.location),
-      constellation:
-        nameId === "Zhongli"
-          ? "Lapis De"
-          : decryptTextAsset(characterData.details?.constellation),
+      constellation: decryptTextAsset(characterData.details?.constellation),
       description: decryptTextAsset(description),
       element: {
         id: element?.id,
         name: decryptTextAsset(element?.name),
       },
-      weaponType: characterData._data.weaponType,
+      weaponType: characterData.weaponType,
       splashImageUrl,
       rarity,
       stars,
