@@ -12,13 +12,16 @@ export type IRarityType =
   | "QUALITY_ORANGE"
   | "QUALITY_ORANGE_SP";
 
+export type IWeaponType =
+  | "WEAPON_SWORD_ONE_HAND"
+  | "WEAPON_CLAYMORE"
+  | "WEAPON_POLE"
+  | "WEAPON_CATALYST"
+  | "WEAPON_BOW";
+
 export type IWeaponByCharacter = {
-  weaponType:
-    | "WEAPON_SWORD_ONE_HAND"
-    | "WEAPON_CLAYMORE"
-    | "WEAPON_POLE"
-    | "WEAPON_CATALYST"
-    | "WEAPON_BOW";
+  weaponType: IWeaponType;
+
   signatureWeapon: number | string;
   name: string;
   icon: string;
@@ -38,7 +41,7 @@ export interface ICharacter {
 
 export interface ICharacterData extends ICharacter {
   description: string;
-  weapon: IWeaponByCharacter;
+  weaponType: IWeaponType;
   affiliation: string;
   constellation: string;
   splashImageUrl: string;

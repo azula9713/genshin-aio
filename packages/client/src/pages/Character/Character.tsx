@@ -3,6 +3,8 @@ import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 
 import Container from "../../components/Layout/Container";
+import RarityStars from "../../components/Character/RarityStars";
+import Overview from "../../components/Character/Overview";
 import { urlParamExtractor } from "../../functions/UrlParamExtractor";
 import { ICharacterData } from "../../interfaces/CharacterInterface";
 import { fetchEnkaCharacterById } from "../../services/enka/characters";
@@ -14,8 +16,6 @@ import HydroBG from "../../assets/images/bgs/constellation_template__hydro.png";
 import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
-import RarityStars from "./RarityStars";
-import Overview from "./Overview";
 
 export default function Character() {
   const location = useLocation();
@@ -110,7 +110,7 @@ export default function Character() {
         </div>
         <Overview
           element={characterData.element?.name}
-          weapon={characterData.weapon}
+          weapon={characterData.weaponType}
           affiliation={characterData.affiliation}
           constellation={characterData.constellation}
         />

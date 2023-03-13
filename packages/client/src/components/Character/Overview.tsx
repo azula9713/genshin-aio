@@ -1,16 +1,13 @@
-import OverviewItemHolder from "../../components/Common/OverviewItemHolder";
+import OverviewItemHolder from "../Common/OverviewItemHolder";
 import weaponTypeParser from "../../functions/WeaponTypeParser";
 
-import {
-  IElementType,
-  IWeaponByCharacter,
-} from "../../interfaces/CharacterInterface";
+import { IElementType, IWeaponType } from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 import weaponIconFilter from "../../static/WeaponIconFilter";
 
 type Props = {
   element: IElementType;
-  weapon: IWeaponByCharacter;
+  weapon: IWeaponType;
   affiliation: string;
   constellation: string;
 };
@@ -21,6 +18,7 @@ export default function Overview({
   affiliation,
   constellation,
 }: Props) {
+  console.log("wepaon", weapon);
   return (
     <div className="mt-2 bg-slate-600 flex flex-col items-center justify-center p-4 rounded-lg shadow-md">
       <div className="flex items-center w-full justify-between">
@@ -33,11 +31,11 @@ export default function Overview({
         </OverviewItemHolder>
         <OverviewItemHolder
           label="Weapon Type"
-          value={weaponTypeParser(weapon?.weaponType) as string}
+          value={weaponTypeParser(weapon) as string}
         >
           <img
             className="w-6 h-6 mr-2"
-            src={weaponIconFilter[weapon?.weaponType]}
+            src={weaponIconFilter[weapon]}
             alt="polearm"
           />
         </OverviewItemHolder>
