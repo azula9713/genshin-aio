@@ -8,9 +8,11 @@ type Props = {
 };
 
 export default function CharacterThumbnail({ character }: Props) {
-  const { fromColor: bgFrom } = colorFilter[character.rarity];
-  const { viaColor: bgVia } = colorFilter[character.rarity];
-  const { toColor: bgTo } = colorFilter[character.rarity];
+  const {
+    toColor: bgTo,
+    fromColor: bgFrom,
+    viaColor: bgVia,
+  } = colorFilter[character.rarity];
 
   return (
     <Link to={`/character/${character.id}`}>
