@@ -1,12 +1,15 @@
 {
-  "name": "genshin-aio",
-  "version": "1.0.0",
-  "description": "Full server for all your Genshin Impact needs",
-  "main": "index.js",
-  "author": "azula9713",
-  "license": "MIT",
+  "private": true,
+  "name": "genshin-aio-monorepo",
   "workspaces": [
-    "server",
-    "front-end"
-  ]
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace client start",
+    "server": "yarn workspace server dev",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
