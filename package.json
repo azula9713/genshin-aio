@@ -1,0 +1,12 @@
+{
+  "name": "genshin-aio",
+  "version": "1.0.0",
+  "description": "Full server for all your Genshin Impact needs",
+  "main": "index.js",
+  "author": "azula9713",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "front-end"
+  ]
+}
