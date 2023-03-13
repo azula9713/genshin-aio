@@ -18,7 +18,6 @@ import {
   mapPassiveTalents,
   mapSkills,
 } from "../utils/EnkaAssetMapper";
-import CharacterWeaponData from "../static/WeaponData.json";
 
 import logger from "../utils/logger";
 
@@ -65,9 +64,6 @@ export const getCharacterById = async (
 ) => {
   const { enkaSkillDepotId, enkaId } = req.query;
 
-  const weaponDetails: AllCharacterWeaponData =
-    CharacterWeaponData.allCharacterWeaponData;
-
   try {
     const characterData: CharacterData = getCharacterByEnkaId(
       Number(enkaId),
@@ -91,8 +87,6 @@ export const getCharacterById = async (
       skillDepotId,
     } = characterData;
 
-    console.log(characterData.details?.vision.get("en"));
-
     const character = {
       id,
       name: decryptTextAsset(name),
@@ -103,12 +97,11 @@ export const getCharacterById = async (
           ? "Lapis De"
           : decryptTextAsset(characterData.details?.constellation),
       description: decryptTextAsset(description),
-      weapon: weaponDetails[characterData.skillDepotId],
       element: {
         id: element?.id,
         name: decryptTextAsset(element?.name),
       },
-      weaponType: characterData._data,
+      weaponType: characterData._data.weaponType,
       splashImageUrl,
       rarity,
       stars,
