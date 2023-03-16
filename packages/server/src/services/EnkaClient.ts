@@ -25,3 +25,7 @@ export function getCharacterByEnkaId(enkaId: number, skillDepotId: number) {
 export function getAllWeaponsFromEnka() {
   return enka.getAllWeapons();
 }
+
+export function getMaterialByEnkaId(materialId: number) {
+  return enka.getMaterialById(materialId);
+}
