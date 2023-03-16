@@ -13,6 +13,7 @@ import {
 import {
   decryptTextAsset,
   mapAbility,
+  mapAscensionData,
   mapConstellations,
   mapCostumes,
   mapPassiveTalents,
@@ -65,6 +66,7 @@ export const getCharacterById = async (
     const passiveTalents = mapPassiveTalents(characterData.passiveTalents);
     const constellations = mapConstellations(characterData.constellations);
     const costumes = mapCostumes(characterData.costumes);
+    const ascensionData = mapAscensionData(characterData);
 
     const {
       id,
@@ -90,6 +92,7 @@ export const getCharacterById = async (
         name: decryptTextAsset(element?.name),
       },
       weaponType: characterData.weaponType,
+      ascensionData,
       splashImageUrl,
       rarity,
       stars,

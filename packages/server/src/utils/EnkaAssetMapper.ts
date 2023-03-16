@@ -1,4 +1,5 @@
 import {
+  CharacterData,
   Constellation,
   Costume,
   ElementalBurst,
@@ -70,6 +71,14 @@ function mapAbility(
   };
 }
 
+function mapAscensionData(characterData: CharacterData) {
+  const ascensionLevels = 6;
+  return Array.from(
+    { length: ascensionLevels },
+    (_, i) => characterData.getAscensionData(i + 1)._data
+  );
+}
+
 export {
   decryptTextAsset,
   mapAbility,
@@ -77,4 +86,5 @@ export {
   mapSkills,
   mapPassiveTalents,
   mapCostumes,
+  mapAscensionData,
 };
