@@ -7,7 +7,7 @@
   "scripts": {
     "client": "yarn workspace client start",
     "server": "yarn workspace server dev",
-    "sanity": "yarn workspace @genshin-aio-monorepo/genshin-aio-studio dev",
+    "sanity": "yarn workspace genshin-studio dev",
     "start": "concurrently --kill-others-on-fail \"yarn sanity\" \"yarn server\" \"yarn client\""
   },
   "dependencies": {

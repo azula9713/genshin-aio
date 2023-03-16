@@ -5,9 +5,9 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'genshin-aio-studio',
+  title: 'genshin-studio',
 
-  projectId: '4jaqg4x3',
+  projectId: 'qtoxgima',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

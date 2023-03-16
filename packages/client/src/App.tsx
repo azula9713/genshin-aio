@@ -46,7 +46,7 @@ export default function App() {
       <RecoilRoot>
         <RouterProvider router={router} fallbackElement={<div>Uh No</div>} />
       </RecoilRoot>
-      <ReactQueryDevtools />
+      <ReactQueryDevtools position="top-left" />
     </QueryClientProvider>
   );
 }

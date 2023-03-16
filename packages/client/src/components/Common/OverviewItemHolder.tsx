@@ -9,10 +9,10 @@ type Props = {
 
 export default function OverviewItemHolder({ children, label, value }: Props) {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col justify-between">
       <TextLabel label={label} />
       <div
-        className="flex justify-start items-center"
+        className="flex justify-start items-center pt-1"
         style={{
           marginTop: "-6px",
         }}

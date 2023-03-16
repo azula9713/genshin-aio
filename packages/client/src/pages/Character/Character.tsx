@@ -16,6 +16,7 @@ import HydroBG from "../../assets/images/bgs/constellation_template__hydro.png";
 import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
+import TalentMats from "../../components/Character/TalentMats";
 
 export default function Character() {
   const location = useLocation();
@@ -114,6 +115,7 @@ export default function Character() {
           affiliation={characterData.affiliation}
           constellation={characterData.constellation}
         />
+        <TalentMats />
       </div>
     </Container>
   );
