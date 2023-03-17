@@ -2,13 +2,6 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 
-import Container from "../../components/Layout/Container";
-import RarityStars from "../../components/Character/RarityStars";
-import Overview from "../../components/Character/Overview";
-import { urlParamExtractor } from "../../functions/UrlParamExtractor";
-import { ICharacterData } from "../../interfaces/CharacterInterface";
-import { fetchEnkaCharacterById } from "../../services/enka/characters";
-
 import ElectroBG from "../../assets/images/bgs/constellation_template__electro.jpg";
 import CryoBG from "../../assets/images/bgs/constellation_template__cryo.jpg";
 import PyroBG from "../../assets/images/bgs/constellation_template__pyro.jpg";
@@ -16,8 +9,16 @@ import HydroBG from "../../assets/images/bgs/constellation_template__hydro.png";
 import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
-import TalentMats from "../../components/Character/TalentMats";
+
+import { urlParamExtractor } from "../../functions/UrlParamExtractor";
+import { ICharacterData } from "../../interfaces/CharacterInterface";
+import { fetchEnkaCharacterById } from "../../services/enka/characters";
+import Container from "../../components/Layout/Container";
+import RarityStars from "../../components/Character/RarityStars";
+import Overview from "../../components/Character/Overview";
+// import TalentMats from "../../components/Character/TalentMats";
 import AscensionMats from "../../components/Character/AscensionMats";
+import Talents from "../../components/Character/Talents";
 
 export default function Character() {
   const location = useLocation();
@@ -34,6 +35,27 @@ export default function Character() {
   const [characterData, setCharacterData] = useState<ICharacterData>(
     {} as ICharacterData
   );
+
+  const {
+    element,
+    splashImageUrl,
+    stars,
+    name,
+    weaponType,
+    affiliation,
+    ascensionData,
+    constellation,
+    passiveTalents,
+    skills,
+    // constellations,
+    // costumes,
+    // description,
+    // enkaId,
+    // iconUrl,
+    // id,
+    // nameId,
+    // rarity,
+  } = characterData;
 
   const elementalBgPicker = {
     Dendro: `url(${DendroBG})`,
@@ -82,7 +104,7 @@ export default function Character() {
         <div
           className="h-full w-full rounded-lg"
           style={{
-            backgroundImage: elementalBgPicker[characterData.element?.name],
+            backgroundImage: elementalBgPicker[element?.name],
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
             backgroundSize: "cover",
@@ -91,36 +113,37 @@ export default function Character() {
           <div
             className="h-[420px] w-full flex flex-col items-start justify-end"
             style={{
-              backgroundImage: `url(${characterData.splashImageUrl})`,
+              backgroundImage: `url(${splashImageUrl})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
           >
             <div className="flex flex-col items-start w-full pl-4">
-              <RarityStars stars={characterData.stars} />
+              <RarityStars stars={stars} />
               <h2
                 className="font-algoindeEnka  pb-2 text-2xl drop-shadow-2xl shadow-balck"
                 style={{
                   textShadow: "2px 2px black",
                 }}
               >
-                {characterData.name}
+                {name}
               </h2>
             </div>
           </div>
         </div>
         <Overview
-          element={characterData.element?.name}
-          weapon={characterData.weaponType}
-          affiliation={characterData.affiliation}
-          constellation={characterData.constellation}
+          element={element?.name}
+          weapon={weaponType}
+          affiliation={affiliation}
+          constellation={constellation}
         />
 
-        <TalentMats />
-        {characterData.ascensionData && (
-          <AscensionMats ascensionData={characterData.ascensionData} />
+        {skills && passiveTalents && (
+          <Talents skills={skills} passiveTalents={passiveTalents} />
         )}
+        {/* <TalentMats /> */}
+        {ascensionData && <AscensionMats ascensionData={ascensionData} />}
       </div>
     </Container>
   );

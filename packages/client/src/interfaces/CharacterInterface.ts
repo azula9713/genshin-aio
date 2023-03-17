@@ -39,6 +39,13 @@ export interface ICharacter {
   };
 }
 
+export interface ITalent {
+  id: number;
+  name: string;
+  icon: string;
+  description: string;
+}
+
 export interface IAscensionData {
   scoinCost: number;
   costItems: [
@@ -64,12 +71,7 @@ export interface ICharacterData extends ICharacter {
     description: string;
     icon?: string;
   }[];
-  skills: {
-    id: number;
-    name: string;
-    description: string;
-    icon: string;
-  }[];
+  skills: ITalent[];
   passiveTalents: {
     id: number;
     name: string;
