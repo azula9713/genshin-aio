@@ -39,7 +39,7 @@ export default function Overview({
           />
         </OverviewItemHolder>
       </div>
-      <div className="flex items-center w-full justify-between">
+      <div className="flex items-center w-full justify-between mt-4">
         <OverviewItemHolder label="Affiliation" value={affiliation} />
         <OverviewItemHolder label="Constellation" value={constellation} />
       </div>

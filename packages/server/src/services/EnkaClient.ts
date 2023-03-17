@@ -1,7 +1,7 @@
 import { EnkaClient } from "enka-network-api";
 
 const enka = new EnkaClient({
-  imageBaseUrl: "https://res.cloudinary.com/genshin/image/upload/sprites",
+  imageBaseUrl: "https://api.ambr.top/assets/UI",
 });
 
 enka.cachedAssetsManager.activateAutoCacheUpdater({

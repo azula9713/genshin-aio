@@ -18,9 +18,8 @@ export default function AscensionMaterialHolder({
   value,
   index,
 }: Props) {
-  const { isError, isLoading, data } = useQuery(
-    ["fetchEnkkaCharacterData", id],
-    () => fetchEnkaMaterialById(id)
+  const { isError, data } = useQuery(["fetchEnkkaCharacterData", id], () =>
+    fetchEnkaMaterialById(id)
   );
 
   const [materialData, setMaterialData] = useState<IMaterialData>(
@@ -35,15 +34,11 @@ export default function AscensionMaterialHolder({
     };
   }, [data]);
 
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
-
   if (isError) {
     return <div>Error</div>;
   }
 
-  if (materialData) {
+  if (materialData && materialData.name) {
     return (
       <div className="w-full flex items-center justify-start space-x-3 my-1 bg-slate-500 rounded-md px-2 h-10">
         <TextLabel label={materialData.name} classNames="w-full" />
@@ -56,6 +51,7 @@ export default function AscensionMaterialHolder({
           <img
             src={materialData.icon}
             alt={materialData.name}
+            width={40}
             style={{
               maxWidth: `${index === 0 ? "90%" : "100%"}`,
             }}
@@ -67,5 +63,5 @@ export default function AscensionMaterialHolder({
     );
   }
 
-  return <div>No Datta</div>;
+  return null;
 }

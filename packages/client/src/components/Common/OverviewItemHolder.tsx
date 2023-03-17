@@ -14,7 +14,7 @@ export default function OverviewItemHolder({ children, label, value }: Props) {
       <div
         className="flex justify-start items-center pt-1"
         style={{
-          marginTop: "-6px",
+          marginTop: "-2px",
         }}
       >
         {children}

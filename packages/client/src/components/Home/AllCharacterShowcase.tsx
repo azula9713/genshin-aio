@@ -34,7 +34,7 @@ export default function AllCharacterShowcase() {
 
   return (
     <div className="overflow-x-hidden w-full items-center justify-center flex px-4 md:px-12">
-      <div className="flex flex-wrap mt-2 items-center justify-start">
+      <div className="flex flex-wrap mt-2 items-center justify-evenly">
         {characters
           .filter((character) => {
             if (

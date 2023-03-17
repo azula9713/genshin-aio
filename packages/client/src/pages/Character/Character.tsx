@@ -116,7 +116,8 @@ export default function Character() {
           affiliation={characterData.affiliation}
           constellation={characterData.constellation}
         />
-        {/* <TalentMats /> */}
+
+        <TalentMats />
         {characterData.ascensionData && (
           <AscensionMats ascensionData={characterData.ascensionData} />
         )}

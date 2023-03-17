@@ -35,7 +35,7 @@ export default function AscensionMats({ ascensionData }: Props) {
   return (
     <div className="mt-2 bg-slate-600 flex flex-col items-center justify-between p-4 rounded-lg shadow-md mb-2">
       <div className="w-full flex items-center justify-between">
-        <p>Ascension Mats</p>
+        <p>Ascension Materials</p>
 
         {isExpanded ? (
           <ChevronUpIcon
