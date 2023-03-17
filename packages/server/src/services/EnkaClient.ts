@@ -1,6 +1,8 @@
 import { EnkaClient } from "enka-network-api";
 
-const enka = new EnkaClient();
+const enka = new EnkaClient({
+  imageBaseUrl: "https://res.cloudinary.com/genshin/image/upload/sprites",
+});
 
 enka.cachedAssetsManager.activateAutoCacheUpdater({
   instant: true, // Run the first update check immediately

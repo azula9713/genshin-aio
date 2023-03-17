@@ -6,7 +6,11 @@ module.exports = {
     fontFamily: {
       algoindeEnka: ["AlgoindeEnka"],
     },
-    extend: {},
+    extend: {
+      transitionProperty: {
+        all: "all",
+      },
+    },
   },
   plugins: [],
 };

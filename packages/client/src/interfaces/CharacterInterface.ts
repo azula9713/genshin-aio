@@ -39,9 +39,21 @@ export interface ICharacter {
   };
 }
 
+export interface IAscensionData {
+  scoinCost: number;
+  costItems: [
+    {
+      id: number;
+      count: number;
+    }
+  ];
+  addProps: [propType: string];
+}
+
 export interface ICharacterData extends ICharacter {
   description: string;
   weaponType: IWeaponType;
+  ascensionData: IAscensionData[];
   affiliation: string;
   constellation: string;
   splashImageUrl: string;

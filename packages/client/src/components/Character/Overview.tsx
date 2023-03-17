@@ -18,7 +18,6 @@ export default function Overview({
   affiliation,
   constellation,
 }: Props) {
-  console.log("wepaon", weapon);
   return (
     <div className="mt-2 bg-slate-600 flex flex-col items-center justify-center p-4 rounded-lg shadow-md">
       <div className="flex items-center w-full justify-between">
