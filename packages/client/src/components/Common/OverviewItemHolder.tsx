@@ -9,7 +9,7 @@ type Props = {
 
 export default function OverviewItemHolder({ children, label, value }: Props) {
   return (
-    <div className="w-full flex flex-col justify-between">
+    <div className="w-full flex flex-col justify-between mx-1">
       <TextLabel label={label} />
       <div
         className="flex justify-start items-center pt-1"

@@ -92,7 +92,8 @@ export default function Character() {
 
   return (
     <Container>
-      <div className="pt-2 md:pt-10 px-2 md:px-10 xl:hidden w-full">
+      {/* Mobile and TabletView */}
+      <div className="pt-2 md:p-10 px-2 xl:hidden w-full">
         <div
           className="h-full w-full rounded-lg"
           style={{
@@ -137,6 +138,44 @@ export default function Character() {
         )}
 
         {ascensionData && <AscensionMats ascensionData={ascensionData} />}
+      </div>
+      {/* Mobile and TabletView End*/}
+
+      {/* PC View */}
+      <div className="hidden xl:flex w-full items-start justify-between border-2 p-10 xl:min-h-[600px] 2xl:min-h-[800px]">
+        <div className="w-1/2 flex flex-col items-start border-red-500 border-2 xl:h-[600px] 2xl:h-[800px] mr-4">
+          <div className="w-full flex items-center justify-start space-x-6 border-2">
+            <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-6xl">
+              {name}
+            </h2>
+            <RarityStars stars={stars} />
+          </div>
+          <Overview
+            element={element?.name}
+            weapon={weaponType}
+            affiliation={affiliation}
+            constellation={constellation}
+            description={description}
+          />
+          {/* <div className="w-3/4 mt-3 leading-5 text-lg italic p-4 border-2 border-rose-400">
+            <p>"{description}"</p>
+          </div> */}
+          {/* <div className="w-full border-2 border-green-500 mt-3">
+            <div>Element</div>
+            <div>Weapon</div>
+            <div>Affilication</div>
+            <div>Constellation</div>
+          </div> */}
+        </div>
+        <div
+          className="w-1/2 border-2 h-[600px] 2xl:h-[800px]"
+          style={{
+            backgroundImage: `url(${splashImageUrl})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
       </div>
     </Container>
   );

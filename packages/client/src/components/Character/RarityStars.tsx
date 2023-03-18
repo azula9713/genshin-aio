@@ -6,11 +6,14 @@ type Props = {
 
 function RarityStars({ stars }: Props) {
   return (
-    <div className="flex w-full justify-start items-center">
+    <div className="flex w-max justify-start items-center">
       {Array(stars)
         .fill("")
         .map((_, i) => (
-          <StarIcon className="h-3 w-3 text-[gold]" key={i} />
+          <StarIcon
+            className="h-3 w-3 lg:w-4 lg:h-4 xl:h-6 xl:w-6 text-[gold]"
+            key={i}
+          />
         ))}
     </div>
   );
