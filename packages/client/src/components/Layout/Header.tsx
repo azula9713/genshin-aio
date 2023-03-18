@@ -22,7 +22,7 @@ export default function Header() {
           <Lottie options={defaultOptions} height={50} width={50} />
         </div>
         <div className="flex justify-end space-x-3 w-full items-center">
-          <div>
+          <div className="hidden">
             <DarkModeToggle />
           </div>
           <div>

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Character from "./pages/Character/Character";
 import Home from "./pages/Home/Home";
 import { RecoilRoot } from "recoil";
+import { useEffect } from "react";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -40,6 +41,10 @@ export default function App() {
       ],
     },
   ]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", "dark");
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
