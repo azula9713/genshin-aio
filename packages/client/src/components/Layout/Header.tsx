@@ -1,9 +1,9 @@
 import Lottie from "react-lottie";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 import DarkModeToggle from "../Custom/DarkModeToggle";
 import * as genshinLogo from "../../assets/genshin-logo.json";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   const defaultOptions = {

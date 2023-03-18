@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 import { ICharacter } from "../../interfaces/CharacterInterface";
 import colorFilter, { bgColorFilter } from "../../static/ThumbnailColourFilter";
 import elementalImageFilter from "../../static/ElementalImagePicker";
-import { Link } from "react-router-dom";
 
 type Props = {
   character: ICharacter;

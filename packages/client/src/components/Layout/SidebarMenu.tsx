@@ -1,7 +1,3 @@
-import React from "react";
-
-type Props = {};
-
-export default function SidebarMenu({}: Props) {
+export default function SidebarMenu() {
   return <div>SidebarMenu</div>;
 }

@@ -1,6 +1,5 @@
 import OverviewItemHolder from "../Common/OverviewItemHolder";
 import weaponTypeParser from "../../functions/WeaponTypeParser";
-
 import { IElementType, IWeaponType } from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 import weaponIconFilter from "../../static/WeaponIconFilter";

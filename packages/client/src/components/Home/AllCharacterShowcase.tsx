@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { useRecoilState, useRecoilValue } from "recoil";
+
 import { allEnkaCharactersAtom } from "../../atoms/EnkaCharacters.atom";
 import { selectedElementAtom } from "../../atoms/SelectedItems.atoms";
 import { ICharacter } from "../../interfaces/CharacterInterface";
@@ -34,7 +35,7 @@ export default function AllCharacterShowcase() {
 
   return (
     <div className="overflow-x-hidden w-full items-center justify-center flex px-4 md:px-12">
-      <div className="flex flex-wrap mt-2 items-center justify-evenly">
+      <div className="mt-2 grid auto-cols-fr grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
         {characters
           .filter((character) => {
             if (
