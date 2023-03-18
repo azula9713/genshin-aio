@@ -1,41 +1,42 @@
-// import { ChevronRightIcon } from "@heroicons/react/24/solid";
-// import { useEffect, useState } from "react";
-// import sanitizeHTML, {
-//   cleanAttackData,
-// } from "../../functions/SanitizeHTMLStrings";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 import { ITalent } from "../../interfaces/CharacterInterface";
 import TextLabel from "../Common/TextLabel";
 
 type Props = {
   talent: ITalent;
-  isAtk?: boolean;
 };
 
-// interface IAtkType {
-//   atkType: string;
-//   desc: string;
-// }
+export default function TalentCard({ talent }: Props) {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-export default function TalentCard({ talent, isAtk = false }: Props) {
-  // const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  function handleExpansion() {
+    setIsExpanded(!isExpanded);
+  }
 
-  // const [sanitizedDesc, setSanitizedDesc] = useState<string[]>([]);
-  // const [atkObject, setAtkObject] = useState<any>([]);
+  function parseText(inputText: string) {
+    // Replace color codes with HTML style tags
+    let modifiedText = inputText.replace(
+      /<color=([^>]+)>/g,
+      '<b style="color:$1">'
+    );
+    modifiedText = modifiedText.replace(/<\/color>/g, "</b>");
 
-  // function handleExpansion() {
-  //   setIsExpanded(!isExpanded);
-  // }
+    modifiedText = modifiedText.replace(
+      /\{LAYOUT_MOBILE#Tap\}\{LAYOUT_PC#Press\}\{LAYOUT_PS#Press\}/g,
+      "Mobile:Tap, PS/PC: Press"
+    );
 
-  // useEffect(() => {
-  //   setSanitizedDesc(sanitizeHTML(talent.description));
-  // }, [talent]);
+    modifiedText = modifiedText.replace(/(\r\n|\n|\\n|\r)/gm, "<br/>");
 
-  // useEffect(() => {
-  //   if (isAtk) {
-  //     setAtkObject(cleanAttackData(sanitizedDesc));
-  //   }
-  // }, [sanitizedDesc, isAtk]);
+    //Removes unnecessary # symbols from the modified text
+    const regex = /#(?!([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3}))/g;
+
+    modifiedText = modifiedText.replace(regex, "");
+
+    return modifiedText;
+  }
 
   return (
     <div className="w-full bg-gray-800 my-1 p-1 rounded-md">
@@ -45,7 +46,7 @@ export default function TalentCard({ talent, isAtk = false }: Props) {
           <TextLabel label={talent.name} classNames="text-white" />
         </div>
 
-        {/* <div
+        <div
           className="w-1/5 mx-2 flex items-center justify-end cursor-pointer"
           onClick={handleExpansion}
         >
@@ -54,22 +55,17 @@ export default function TalentCard({ talent, isAtk = false }: Props) {
               isExpanded ? "-rotate-90" : "rotate-0"
             }`}
           />
-        </div> */}
+        </div>
       </div>
 
-      {/* <div className={`${isExpanded ? "block" : "hidden"}`}>
-        <p>Coming Soon!!!</p>
-        {!isAtk ? (
-          <p className="text-left px-2">{sanitizedDesc}</p>
-        ) : (
-          atkObject.map((atk: IAtkType, i: number) => (
-            <div key={i} className="p-1">
-              <h5 className="font-bold">{atk.atkType}:</h5>
-              <p className="text-sm pl-2">{atk.desc}</p>
-            </div>
-          ))
-        )}
-      </div> */}
+      <div className={`${isExpanded ? "block" : "hidden"}`}>
+        <div
+          className="text-white px-2"
+          dangerouslySetInnerHTML={{
+            __html: parseText(talent.description),
+          }}
+        />
+      </div>
     </div>
   );
 }

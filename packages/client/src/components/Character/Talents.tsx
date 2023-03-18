@@ -13,12 +13,8 @@ export default function Talents({ skills, passiveTalents }: Props) {
       <div className="w-full">
         Character Skills
         <div className="w-full flex flex-col items-start justify-center">
-          {skills.map((skill, i) => (
-            <TalentCard
-              talent={skill}
-              key={skill.id}
-              isAtk={i === 0 ? true : false}
-            />
+          {skills.map((skill) => (
+            <TalentCard talent={skill} key={skill.id} />
           ))}
         </div>
       </div>
