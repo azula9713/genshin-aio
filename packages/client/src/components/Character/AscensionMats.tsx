@@ -50,7 +50,7 @@ export default function AscensionMats({ ascensionData }: Props) {
         )}
       </div>
       {isExpanded && (
-        <div className="w-full transition-all duration-300 ease-in-out">
+        <div className="w-full transition-all duration-300 ease-in-out md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-2">
           {ascensionData ? (
             itemsArray.map(([id, count], index) => {
               if (!id || !count) return null;

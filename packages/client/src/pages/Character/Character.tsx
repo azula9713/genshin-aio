@@ -100,7 +100,7 @@ export default function Character() {
 
   return (
     <Container>
-      <div className="pt-2 px-2 md:hidden">
+      <div className="pt-2 md:pt-10 px-2 md:px-10 xl:hidden">
         <div
           className="h-full w-full rounded-lg"
           style={{
@@ -111,7 +111,7 @@ export default function Character() {
           }}
         >
           <div
-            className="h-[420px] w-full flex flex-col items-start justify-end"
+            className="h-[420px] md:h-[520px] w-full flex flex-col items-start justify-end"
             style={{
               backgroundImage: `url(${splashImageUrl})`,
               backgroundRepeat: "no-repeat",
@@ -122,7 +122,7 @@ export default function Character() {
             <div className="flex flex-col items-start w-full pl-4">
               <RarityStars stars={stars} />
               <h2
-                className="font-algoindeEnka  pb-2 text-2xl drop-shadow-2xl shadow-balck"
+                className="font-algoindeEnka  pb-2 text-2xl md:text-4xl drop-shadow-2xl shadow-balck"
                 style={{
                   textShadow: "2px 2px black",
                 }}
