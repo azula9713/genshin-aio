@@ -1,5 +1,6 @@
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 
 import { ITalent } from "../../interfaces/CharacterInterface";
 import TextLabel from "../Common/TextLabel";
@@ -50,7 +51,7 @@ export default function TalentCard({ talent }: Props) {
         </div>
 
         <div
-          className="w-1/5 mx-2 flex items-center justify-end cursor-pointer"
+          className="w-1/5 mx-2 flex items-center justify-end"
           onClick={handleExpansion}
         >
           <ChevronRightIcon
@@ -61,14 +62,25 @@ export default function TalentCard({ talent }: Props) {
         </div>
       </div>
 
-      <div className={`${isExpanded ? "block" : "hidden"}`}>
+      <motion.div
+        initial={{
+          height: 0,
+          opacity: 0,
+        }}
+        animate={{
+          opacity: isExpanded ? 1 : 0,
+          height: isExpanded ? "auto" : 0,
+        }}
+        transition={{ duration: 0.6 }}
+        className={`${isExpanded ? "block" : "hidden"}`}
+      >
         <div
           className="text-gray-800 dark:text-white px-2"
           dangerouslySetInnerHTML={{
             __html: parseText(talent.description),
           }}
         />
-      </div>
+      </motion.div>
     </div>
   );
 }
