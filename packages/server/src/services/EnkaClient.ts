@@ -1,8 +1,8 @@
 import { EnkaClient } from "enka-network-api";
 
 const enka = new EnkaClient({
-  // imageBaseUrl: "https://api.ambr.top/assets/UI",
-  imageBaseUrl: "https://cdn.shogunate.tools/assets/genshin",
+  imageBaseUrl: "https://api.ambr.top/assets/UI",
+  // imageBaseUrl: "https://cdn.shogunate.tools/assets/genshin",
 });
 
 enka.cachedAssetsManager.activateAutoCacheUpdater({
