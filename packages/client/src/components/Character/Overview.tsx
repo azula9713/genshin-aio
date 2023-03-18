@@ -9,6 +9,7 @@ type Props = {
   weapon: IWeaponType;
   affiliation: string;
   constellation: string;
+  description: string;
 };
 
 export default function Overview({
@@ -16,9 +17,18 @@ export default function Overview({
   weapon,
   affiliation,
   constellation,
+  description,
 }: Props) {
   return (
     <div className="mt-2 bg-slate-200 dark:bg-slate-600 flex flex-col items-center justify-center p-4 rounded-lg shadow-md">
+      <p
+        className="text-sm md:text-base lg:text-lg mb-4 italic"
+        style={{
+          lineHeight: "1rem",
+        }}
+      >
+        "{description}"
+      </p>
       <div className="flex items-center w-full justify-between">
         <OverviewItemHolder label="Element" value={element}>
           <img
