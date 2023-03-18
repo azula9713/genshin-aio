@@ -18,7 +18,7 @@ export default function CharacterThumbnail({ character }: Props) {
     <Link to={`/character/${character.id}`}>
       <div
         style={{ backgroundColor: bgColorFilter[character.rarity] }}
-        className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#323333] overflow-hidden mb-5 cursor-pointer "
+        className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5 cursor-pointer "
       >
         <div className="w-full flex flex-col items-center mt-1 h-[130px] lg:h-[170px]">
           <div className="h-3/4 flex items-end justify-center">
@@ -30,7 +30,7 @@ export default function CharacterThumbnail({ character }: Props) {
               backgroundImage: `linear-gradient(to bottom right, ${bgFrom}, ${bgVia}, ${bgTo}`,
             }}
           >
-            <p className="text-sm text-center font-semibold leading-3 mt-1 flex items-center h-full p-1">
+            <p className="text-sm text-center font-semibold leading-3 mt-1 flex items-center h-full p-1 text-white">
               {character.name}
             </p>
           </div>

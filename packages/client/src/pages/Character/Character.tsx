@@ -91,7 +91,7 @@ export default function Character() {
 
   return (
     <Container>
-      <div className="pt-2 md:pt-10 px-2 md:px-10 xl:hidden">
+      <div className="pt-2 md:pt-10 px-2 md:px-10 xl:hidden w-full">
         <div
           className="h-full w-full rounded-lg"
           style={{
@@ -113,7 +113,7 @@ export default function Character() {
             <div className="flex flex-col items-start w-full pl-4">
               <RarityStars stars={stars} />
               <h2
-                className="font-algoindeEnka  pb-2 text-2xl md:text-4xl drop-shadow-2xl shadow-balck"
+                className="font-algoindeEnka pb-2 text-2xl md:text-4xl drop-shadow-2xl text-white"
                 style={{
                   textShadow: "2px 2px black",
                 }}

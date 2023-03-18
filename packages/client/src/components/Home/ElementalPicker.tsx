@@ -17,7 +17,7 @@ export default function ElementalPicker() {
     useRecoilState(selectedElementAtom);
 
   return (
-    <div className="flex items-center justify-between py-3 px-4 my-3">
+    <div className="w-full max-w-[400px] flex items-center justify-between py-3 px-4 my-3">
       {elements.map((element, index) => (
         <div
           key={index}

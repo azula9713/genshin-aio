@@ -39,11 +39,14 @@ export default function TalentCard({ talent }: Props) {
   }
 
   return (
-    <div className="w-full bg-gray-800 my-1 p-1 rounded-md">
+    <div className="w-full bg-gray-300 dark:bg-gray-800 my-1 p-1 rounded-md">
       <div className="flex items-center justify-between w-full">
         <div className="w-full flex items-center justify-start space-x-3">
           <img src={talent.icon} alt={talent.name} width={60} />
-          <TextLabel label={talent.name} classNames="text-white" />
+          <TextLabel
+            label={talent.name}
+            classNames="text-black dark:text-white"
+          />
         </div>
 
         <div
@@ -60,7 +63,7 @@ export default function TalentCard({ talent }: Props) {
 
       <div className={`${isExpanded ? "block" : "hidden"}`}>
         <div
-          className="text-white px-2"
+          className="text-gray-800 dark:text-white px-2"
           dangerouslySetInnerHTML={{
             __html: parseText(talent.description),
           }}
