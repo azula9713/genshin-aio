@@ -14,7 +14,6 @@ export function urlParamExtractor(urlParam: string) {
 
     return { skillDepotId, characterName, characterEnkaId };
   } else {
-    // handle case when the string does not match the pattern
     return {
       skillDepotId,
       characterName,

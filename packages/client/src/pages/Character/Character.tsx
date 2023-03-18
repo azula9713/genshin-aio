@@ -16,7 +16,6 @@ import { fetchEnkaCharacterById } from "../../services/enka/characters";
 import Container from "../../components/Layout/Container";
 import RarityStars from "../../components/Character/RarityStars";
 import Overview from "../../components/Character/Overview";
-// import TalentMats from "../../components/Character/TalentMats";
 import AscensionMats from "../../components/Character/AscensionMats";
 import Talents from "../../components/Character/Talents";
 
@@ -47,14 +46,6 @@ export default function Character() {
     constellation,
     passiveTalents,
     skills,
-    // constellations,
-    // costumes,
-    // description,
-    // enkaId,
-    // iconUrl,
-    // id,
-    // nameId,
-    // rarity,
   } = characterData;
 
   const elementalBgPicker = {
@@ -142,7 +133,7 @@ export default function Character() {
         {skills && passiveTalents && (
           <Talents skills={skills} passiveTalents={passiveTalents} />
         )}
-        {/* <TalentMats /> */}
+
         {ascensionData && <AscensionMats ascensionData={ascensionData} />}
       </div>
     </Container>

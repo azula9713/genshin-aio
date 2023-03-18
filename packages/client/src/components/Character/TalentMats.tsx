@@ -1,10 +1,6 @@
 import OverviewItemHolder from "../Common/OverviewItemHolder";
 
-type Props = {
-  talentData?: any[];
-};
-
-export default function TalentMats({}: Props) {
+export default function TalentMats() {
   return (
     <div className="mt-2 bg-slate-600 flex flex-col items-center justify-between p-4 rounded-lg shadow-md mb-2">
       <div className="flex items-center w-full justify-between">
