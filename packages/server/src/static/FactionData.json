@@ -1,0 +1,262 @@
+{
+  "Wandering Heroine": {
+    "regionName": "ZeroDawn",
+    "icon": "/UI_ChapterIcon_ZeroDawn.png"
+  },
+  "Inazuma City": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Naganohara Fireworks": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Shuumatsuban": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Watatsumi Island": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Tenryou Commission": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Tri-Commission": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Inazuma Shogunate": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Grand Narukami Shrine": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Yashiro Commission": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Arataki Gang": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Watatsumi Army": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Kanjou Commission": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "International Trade Association": {
+    "regionName": "Inazuma",
+    "icon": "/UI_ChapterIcon_Inazuma.png"
+  },
+  "Adeptus": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Wangsheng Funeral Parlor": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Cloud Retainer's Abode": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Streetward Rambler's Abode": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yanshang Teahouse": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yanfei Legal Consultancy": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Chasm Exploration Team": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Eight Trades": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Feiyun Commerce Guild": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "The Red Strings": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Liyue Adeptus": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Guhua Clan": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Huishan Hall": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Liyue Qixing": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Millelith": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Minghua Company": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Shenglu Hall": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Wanmin Restaurant": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "The Crux": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yaksha": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yinyuan Hall": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yun-Han Opera Troupe": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Bubu Pharmacy": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Tianheng Thaumaturges": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Liyue Harbor": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Yuehai Pavilion": {
+    "regionName": "Liyue",
+    "icon": "/UI_ChapterIcon_Liyue.png"
+  },
+  "Mondstadt": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Wolvendom": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Knights of Favonius": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Adventurers' Guild": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Church of Favonius": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Four Winds": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "The Cat's Tail": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Dawn Winery": {
+    "regionName": "Mengde",
+    "icon": "/UI_ChapterIcon_Mondstad.png"
+  },
+  "Sumeru Akademiya": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Haravatat": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Aranara": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Spantamad": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Kshahrewer": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Vahumana": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "The Eremites": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Rtawahist": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "The Palace of Alcazarzaray": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Temple of Silence": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Gandharva Ville": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Aaru Village": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Sumeru City": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Zubayr Theater": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "None": {
+    "regionName": "Sumeru",
+    "icon": "/UI_ChapterIcon_Sumeru.png"
+  },
+  "Fatui": {
+    "regionName": "Snezhnaya",
+    "icon": "/UI_ChapterIcon_Snezhnaya.png"
+  },
+  "-": {
+    "regionName": "Traveler",
+    "icon": "/UI_ChapterIcon_Traveler.png"
+  }
+}

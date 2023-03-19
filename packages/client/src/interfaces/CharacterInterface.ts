@@ -46,6 +46,11 @@ export interface ITalent {
   description: string;
 }
 
+export interface IRegion {
+  regionName: string;
+  icon: string;
+}
+
 export interface IAscensionData {
   scoinCost: number;
   costItems: [
@@ -62,6 +67,7 @@ export interface ICharacterData extends ICharacter {
   weaponType: IWeaponType;
   ascensionData: IAscensionData[];
   affiliation: string;
+  region: IRegion;
   constellation: string;
   splashImageUrl: string;
   stars: number;

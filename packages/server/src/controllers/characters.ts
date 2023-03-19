@@ -19,6 +19,7 @@ import {
   mapPassiveTalents,
   mapSkills,
 } from "../utils/EnkaAssetMapper";
+import factionMapper from "../utils/FactionMapper";
 
 import logger from "../utils/logger";
 
@@ -85,6 +86,9 @@ export const getCharacterById = async (
       name: decryptTextAsset(name),
       nameId,
       affiliation: decryptTextAsset(characterData.details?.location),
+      region: factionMapper(
+        decryptTextAsset(characterData.details?.location) as string
+      ),
       constellation: decryptTextAsset(characterData.details?.constellation),
       description: decryptTextAsset(description),
       element: {

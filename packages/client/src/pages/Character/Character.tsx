@@ -47,6 +47,7 @@ export default function Character() {
     passiveTalents,
     skills,
     description,
+    region,
   } = characterData;
 
   const elementalBgPicker = {
@@ -129,6 +130,7 @@ export default function Character() {
           element={element?.name}
           weapon={weaponType}
           affiliation={affiliation}
+          region={region}
           constellation={constellation}
           description={description}
           name={characterName}
@@ -155,6 +157,7 @@ export default function Character() {
             element={element?.name}
             weapon={weaponType}
             affiliation={affiliation}
+            region={region}
             constellation={constellation}
             description={description}
             name={characterName}

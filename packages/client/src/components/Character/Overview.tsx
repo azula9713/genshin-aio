@@ -1,6 +1,10 @@
 import OverviewItemHolder from "../Common/OverviewItemHolder";
 import weaponTypeParser from "../../functions/WeaponTypeParser";
-import { IElementType, IWeaponType } from "../../interfaces/CharacterInterface";
+import {
+  IElementType,
+  IRegion,
+  IWeaponType,
+} from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 import weaponIconFilter from "../../static/WeaponIconFilter";
 import chapterIconFilter from "../../static/ChapterIconFilter";
@@ -13,6 +17,7 @@ type Props = {
   constellation: string;
   description: string;
   name: string;
+  region: IRegion;
 };
 
 export default function Overview({
@@ -22,13 +27,25 @@ export default function Overview({
   constellation,
   description,
   name,
+  region,
 }: Props) {
   const [chapterIcon, setChapterIcon] = useState<string>("");
+  const [regionIcon, setRegionIcon] = useState<string>("");
 
   useEffect(() => {
     async function loadImage() {
-      const url = await chapterIconFilter(name);
-      setChapterIcon(url);
+      const regionUrl = await chapterIconFilter(region.regionName);
+
+      setRegionIcon(regionUrl);
+    }
+    loadImage();
+  }, [region]);
+
+  useEffect(() => {
+    async function loadImage() {
+      const chapterUrl = await chapterIconFilter(name);
+
+      setChapterIcon(chapterUrl);
     }
     loadImage();
   }, [name]);
@@ -68,8 +85,8 @@ export default function Overview({
           <OverviewItemHolder label="Affiliation" value={affiliation}>
             <img
               className="w-6 h-6 mr-2"
-              src={weaponIconFilter[weapon]}
-              alt={weapon}
+              src={regionIcon}
+              alt={region.regionName}
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
@@ -115,8 +132,8 @@ export default function Overview({
           <OverviewItemHolder label="Affiliation" value={affiliation}>
             <img
               className="w-10 h-10 mr-2"
-              src={weaponIconFilter[weapon]}
-              alt={weapon}
+              src={regionIcon}
+              alt={region.regionName}
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>

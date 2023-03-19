@@ -1,5 +1,6 @@
 export default async function chapterIconFilter(characterName: string) {
   let image = null;
+
   try {
     const imageModule = await import(
       `../assets/images/chapters/UI_ChapterIcon_${characterName}.png`
