@@ -65,7 +65,13 @@ export default function Overview({
           </OverviewItemHolder>
         </div>
         <div className="flex items-center w-full justify-between mt-4">
-          <OverviewItemHolder label="Affiliation" value={affiliation} />
+          <OverviewItemHolder label="Affiliation" value={affiliation}>
+            <img
+              className="w-6 h-6 mr-2"
+              src={weaponIconFilter[weapon]}
+              alt={weapon}
+            />
+          </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
             <img
               className="w-6 h-6 mr-2"
@@ -106,7 +112,13 @@ export default function Overview({
               alt={weapon}
             />
           </OverviewItemHolder>
-          <OverviewItemHolder label="Affiliation" value={affiliation} />
+          <OverviewItemHolder label="Affiliation" value={affiliation}>
+            <img
+              className="w-10 h-10 mr-2"
+              src={weaponIconFilter[weapon]}
+              alt={weapon}
+            />
+          </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
             <img
               className="w-10 h-10 mr-2"
