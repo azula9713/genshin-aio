@@ -131,6 +131,7 @@ export default function Character() {
           affiliation={affiliation}
           constellation={constellation}
           description={description}
+          name={characterName}
         />
 
         {skills && passiveTalents && (
@@ -156,16 +157,8 @@ export default function Character() {
             affiliation={affiliation}
             constellation={constellation}
             description={description}
+            name={characterName}
           />
-          {/* <div className="w-3/4 mt-3 leading-5 text-lg italic p-4 border-2 border-rose-400">
-            <p>"{description}"</p>
-          </div> */}
-          {/* <div className="w-full border-2 border-green-500 mt-3">
-            <div>Element</div>
-            <div>Weapon</div>
-            <div>Affilication</div>
-            <div>Constellation</div>
-          </div> */}
         </div>
         <div
           className="w-1/2 border-2 h-[600px] 2xl:h-[800px]"

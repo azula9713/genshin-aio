@@ -3,6 +3,8 @@ import weaponTypeParser from "../../functions/WeaponTypeParser";
 import { IElementType, IWeaponType } from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 import weaponIconFilter from "../../static/WeaponIconFilter";
+import chapterIconFilter from "../../static/ChapterIconFilter";
+import { useEffect, useState } from "react";
 
 type Props = {
   element: IElementType;
@@ -10,6 +12,7 @@ type Props = {
   affiliation: string;
   constellation: string;
   description: string;
+  name: string;
 };
 
 export default function Overview({
@@ -18,7 +21,18 @@ export default function Overview({
   affiliation,
   constellation,
   description,
+  name,
 }: Props) {
+  const [chapterIcon, setChapterIcon] = useState<string>("");
+
+  useEffect(() => {
+    async function loadImage() {
+      const url = await chapterIconFilter(name);
+      setChapterIcon(url);
+    }
+    loadImage();
+  }, [name]);
+
   return (
     <div className="w-full">
       {/* Mobile and Tablet View */}
@@ -52,7 +66,13 @@ export default function Overview({
         </div>
         <div className="flex items-center w-full justify-between mt-4">
           <OverviewItemHolder label="Affiliation" value={affiliation} />
-          <OverviewItemHolder label="Constellation" value={constellation} />
+          <OverviewItemHolder label="Constellation" value={constellation}>
+            <img
+              className="w-6 h-6 mr-2"
+              src={chapterIcon as string}
+              alt={name}
+            />
+          </OverviewItemHolder>
         </div>
       </div>
       {/* Mobile and Tablet View Ends*/}
@@ -87,7 +107,13 @@ export default function Overview({
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Affiliation" value={affiliation} />
-          <OverviewItemHolder label="Constellation" value={constellation} />
+          <OverviewItemHolder label="Constellation" value={constellation}>
+            <img
+              className="w-10 h-10 mr-2"
+              src={chapterIcon as string}
+              alt={name}
+            />
+          </OverviewItemHolder>
         </div>
       </div>
       {/* PC View Ends*/}
