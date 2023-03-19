@@ -9,6 +9,7 @@ import HydroBG from "../../assets/images/bgs/constellation_template__hydro.png";
 import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
+import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
 
 import { urlParamExtractor } from "../../functions/UrlParamExtractor";
 import { ICharacterData } from "../../interfaces/CharacterInterface";
@@ -38,6 +39,7 @@ export default function Character() {
   const {
     element,
     splashImageUrl,
+    nameCard,
     stars,
     name,
     weaponType,
@@ -145,9 +147,20 @@ export default function Character() {
       {/* Mobile and TabletView End*/}
 
       {/* PC View */}
-      <div className="hidden xl:flex w-full items-start justify-between border-2 p-10 xl:min-h-[600px] 2xl:min-h-[800px]">
-        <div className="w-1/2 flex flex-col items-start border-red-500 border-2 xl:h-[600px] 2xl:h-[800px] mr-4">
-          <div className="w-full flex items-center justify-start space-x-6 border-2">
+      <div
+        className="coverBg hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
+        style={{
+          background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${
+            nameCard || StaticNameCard
+          })`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          position: "relative",
+        }}
+      >
+        <div className="w-1/2 flex flex-col items-start xl:h-[600px] 2xl:h-[800px] mr-4 absolute z-10">
+          <div className="w-full flex items-center justify-start space-x-6">
             <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-6xl">
               {name}
             </h2>
@@ -163,15 +176,19 @@ export default function Character() {
             name={characterName}
           />
         </div>
-        <div
-          className="w-1/2 border-2 h-[600px] 2xl:h-[800px]"
-          style={{
-            backgroundImage: `url(${splashImageUrl})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        />
+        <div className="w-full h-[600px] 2xl:h-[800px] flex items-center justify-end">
+          <div className={`w-4/5 h-full ${characterName}`}>
+            <img
+              src={splashImageUrl}
+              alt=""
+              style={{
+                height: "100%",
+                marginLeft: "15%",
+                scale: "110%",
+              }}
+            />
+          </div>
+        </div>
       </div>
     </Container>
   );

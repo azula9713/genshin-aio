@@ -70,6 +70,7 @@ export interface ICharacterData extends ICharacter {
   region: IRegion;
   constellation: string;
   splashImageUrl: string;
+  nameCard: string;
   stars: number;
   costumes: {
     id: number;

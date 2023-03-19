@@ -3,11 +3,39 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "AlgoindeEnka";
-    src: url("./assets/fonts/shii-webfont.woff2");
+  font-family: "AlgoindeEnka";
+  src: url("./assets/fonts/shii-webfont.woff2");
 }
 
 * {
-    font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5); /* change opacity value as needed */
+}
+
+.coverBg {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+.PlayerGirl,
+.PlayerBoy {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5%;
+  scale: 90%;
+}
+
+.Diona,
+.Faruzan {
+  scale: 120%;
+}

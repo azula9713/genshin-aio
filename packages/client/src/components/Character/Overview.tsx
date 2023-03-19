@@ -78,6 +78,9 @@ export default function Overview({
               className="w-6 h-6 mr-2"
               src={weaponIconFilter[weapon]}
               alt={weapon}
+              style={{
+                filter: "brightness(0) invert(1)",
+              }}
             />
           </OverviewItemHolder>
         </div>
@@ -101,7 +104,7 @@ export default function Overview({
       {/* Mobile and Tablet View Ends*/}
 
       {/* PC View */}
-      <div className="hidden xl:flex mt-2 flex-col items-start justify-center p-4 border-2 border-blue-500">
+      <div className="hidden xl:flex mt-2 flex-col items-start justify-center p-4">
         <p
           className="w-3/4 leading-5 text-lg italic py-4"
           style={{
@@ -111,7 +114,7 @@ export default function Overview({
           "{description}"
         </p>
 
-        <div className="w-full border-yellow-500 border-2 flex items-start justify-evenly">
+        <div className="w-full flex items-start justify-evenly">
           <OverviewItemHolder label="Element" value={element}>
             <img
               className="w-10 h-10 mr-2"
@@ -127,6 +130,9 @@ export default function Overview({
               className="w-10 h-10 mr-2"
               src={weaponIconFilter[weapon]}
               alt={weapon}
+              style={{
+                filter: "brightness(0) invert(1)",
+              }}
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Affiliation" value={affiliation}>

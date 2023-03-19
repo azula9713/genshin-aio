@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <div className="h-16 max-h-16 flex items-center justify-between shadow-lg w-full px-4 md:px-12">
+    <div className="h-16 max-h-16 flex items-center justify-between shadow-lg w-full px-4 md:px-12 z-40">
       <div className="h-16 w-12 flex items-center justify-start">
         <Link to="/" className="w-full">
           <Lottie
