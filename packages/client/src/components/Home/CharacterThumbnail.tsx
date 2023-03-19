@@ -16,11 +16,11 @@ export default function CharacterThumbnail({ character }: Props) {
   } = colorFilter[character.rarity];
 
   return (
-    <Link to={`/character/${character.id}`}>
-      <div
-        style={{ backgroundColor: bgColorFilter[character.rarity] }}
-        className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5 cursor-pointer "
-      >
+    <div
+      style={{ backgroundColor: bgColorFilter[character.rarity] }}
+      className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5"
+    >
+      <Link to={`/character/${character.id}`}>
         <div className="w-full flex flex-col items-center mt-1 h-[130px] lg:h-[170px]">
           <div className="h-3/4 flex items-end justify-center">
             <img src={character.iconUrl} alt={character.nameId} />
@@ -36,14 +36,14 @@ export default function CharacterThumbnail({ character }: Props) {
             </p>
           </div>
         </div>
-        <div className="absolute top-0 left-0 flex items-center text-white p-2 ml-[-5px] mt-[-5px]">
-          <img
-            className="w-4 h-4 lg:w-5 lg:h-5"
-            src={elementalImageFilter[character.element.name]}
-            alt={elementalImageFilter[character.element.name]}
-          />
-        </div>
+      </Link>
+      <div className="absolute top-0 left-0 flex items-center text-white p-2 ml-[-5px] mt-[-5px]">
+        <img
+          className="w-4 h-4 lg:w-5 lg:h-5"
+          src={elementalImageFilter[character.element.name]}
+          alt={elementalImageFilter[character.element.name]}
+        />
       </div>
-    </Link>
+    </div>
   );
 }

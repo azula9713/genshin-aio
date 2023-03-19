@@ -34,7 +34,7 @@ export default function Overview({
 
   useEffect(() => {
     async function loadImage() {
-      const regionUrl = await chapterIconFilter(region.regionName);
+      const regionUrl = await chapterIconFilter(region?.regionName);
 
       setRegionIcon(regionUrl);
     }
@@ -86,7 +86,7 @@ export default function Overview({
             <img
               className="w-6 h-6 mr-2"
               src={regionIcon}
-              alt={region.regionName}
+              alt={region?.regionName}
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
@@ -133,7 +133,7 @@ export default function Overview({
             <img
               className="w-10 h-10 mr-2"
               src={regionIcon}
-              alt={region.regionName}
+              alt={region?.regionName}
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
