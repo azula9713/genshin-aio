@@ -79,6 +79,7 @@ export const getCharacterById = async (
       rarity,
       stars,
       skillDepotId,
+      nameCard,
     } = characterData;
 
     const character = {
@@ -96,6 +97,7 @@ export const getCharacterById = async (
         name: decryptTextAsset(element?.name),
       },
       weaponType: characterData.weaponType,
+      nameCard: nameCard?.pictures[1].url || "No Name Card",
       ascensionData,
       splashImageUrl,
       rarity,

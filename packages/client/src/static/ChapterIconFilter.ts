@@ -8,8 +8,6 @@ export default async function chapterIconFilter(characterName: string) {
 
     image = imageModule.default;
   } catch (error) {
-    console.error(`Error loading chapter icon for ${characterName}:`, error);
-
     try {
       const imageModule2 = await import(
         `../assets/images/constellations/Eff_UI_Talent_${characterName}.png`
@@ -17,8 +15,6 @@ export default async function chapterIconFilter(characterName: string) {
 
       image = imageModule2.default;
     } catch (error) {
-      console.error(`Error loading talent icon for ${characterName}:`, error);
-
       image = null;
     }
   }
