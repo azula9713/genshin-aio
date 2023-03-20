@@ -10,6 +10,7 @@ import {
   getAllChatactersFromEnka,
   getCharacterByEnkaId,
 } from "../services/EnkaClient";
+import characterMapping from "../utils/CharacterDictionary";
 import {
   decryptTextAsset,
   mapAbility,
@@ -22,6 +23,7 @@ import {
 import factionMapper from "../utils/FactionMapper";
 
 import logger from "../utils/logger";
+import uniqueIdMapper from "../utils/UniqueIdMapper";
 
 export const getAllCharacters = async (req: Request<{}, {}>, res: Response) => {
   try {
@@ -31,7 +33,7 @@ export const getAllCharacters = async (req: Request<{}, {}>, res: Response) => {
       const { _nameId, id, rarity, icon, element, skillDepotId } = character;
 
       return {
-        id: skillDepotId + _nameId + id,
+        id: uniqueIdMapper(_nameId, skillDepotId).toLowerCase(),
         enkaId: id,
         name: decryptTextAsset(character.name),
         nameId: character._nameId,
@@ -55,12 +57,14 @@ export const getCharacterById = async (
   req: Request<{}, {}, GetCharacterEnkaIdInput["query"]>,
   res: Response
 ) => {
-  const { enkaSkillDepotId, enkaId } = req.query;
+  const { characterNameId } = req.query;
 
   try {
+    const { characterId, depotId } =
+      characterMapping[characterNameId?.toString() as string];
     const characterData: CharacterData = getCharacterByEnkaId(
-      Number(enkaId),
-      Number(enkaSkillDepotId)
+      Number(characterId),
+      Number(depotId)
     );
 
     const skills = mapSkills(characterData.skills);
