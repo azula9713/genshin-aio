@@ -5,12 +5,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import CustomNormalCursor from "./assets/cursor/Genshin-Impact-Normal-Select.png";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <main
+      style={{
+        cursor: "url(" + CustomNormalCursor + "), auto",
+      }}
+    >
+      <App />
+    </main>
   </React.StrictMode>
 );
 

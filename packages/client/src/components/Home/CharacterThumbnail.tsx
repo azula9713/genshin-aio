@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ICharacter } from "../../interfaces/CharacterInterface";
 import colorFilter, { bgColorFilter } from "../../static/ThumbnailColourFilter";
 import elementalImageFilter from "../../static/ElementalImagePicker";
+import CustomLinkCursor from "../../assets/cursor/Genshin-Impact-Link-Select.png";
 
 type Props = {
   character: ICharacter;
@@ -20,7 +21,12 @@ export default function CharacterThumbnail({ character }: Props) {
       style={{ backgroundColor: bgColorFilter[character.rarity] }}
       className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5"
     >
-      <Link to={`/character/${character.id}`}>
+      <Link
+        to={`/character/${character.id}`}
+        style={{
+          cursor: "url(" + CustomLinkCursor + "), auto",
+        }}
+      >
         <div className="w-full flex flex-col items-center mt-1 h-[130px] lg:h-[170px]">
           <div className="h-3/4 flex items-end justify-center">
             <img src={character.iconUrl} alt={character.nameId} />
