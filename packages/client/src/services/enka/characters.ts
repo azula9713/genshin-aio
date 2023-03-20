@@ -6,12 +6,9 @@ async function fetchAllCharacters() {
   return result.data;
 }
 
-async function fetchEnkaCharacterById(
-  enkaId: string,
-  enkaSkillDepotId: string
-) {
+async function fetchEnkaCharacterById(characterNameId: string) {
   const result = await instance.get("/api/v1/enkaCharacters/CharacterData", {
-    params: { enkaId, enkaSkillDepotId },
+    params: { characterNameId },
   });
 
   return result.data;

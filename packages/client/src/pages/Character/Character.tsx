@@ -22,14 +22,11 @@ import Talents from "../../components/Character/Talents";
 
 export default function Character() {
   const location = useLocation();
-
-  const { characterEnkaId, characterName, skillDepotId } = urlParamExtractor(
-    location.pathname
-  );
+  const characterName = urlParamExtractor(location.pathname);
 
   const { isError, isLoading, data } = useQuery(
-    ["fetchEnkkaCharacterData", characterEnkaId, skillDepotId],
-    () => fetchEnkaCharacterById(characterEnkaId, skillDepotId)
+    ["fetchEnkkaCharacterData", characterName],
+    () => fetchEnkaCharacterById(characterName)
   );
 
   const [characterData, setCharacterData] = useState<ICharacterData>(
@@ -150,7 +147,7 @@ export default function Character() {
       <div
         className="coverBg hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
         style={{
-          background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${
+          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${
             nameCard || StaticNameCard
           })`,
           backgroundRepeat: "no-repeat",

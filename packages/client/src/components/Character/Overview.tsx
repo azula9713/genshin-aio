@@ -9,6 +9,7 @@ import elementalImageFilter from "../../static/ElementalImagePicker";
 import weaponIconFilter from "../../static/WeaponIconFilter";
 import chapterIconFilter from "../../static/ChapterIconFilter";
 import { useEffect, useState } from "react";
+import capitalizeFirstLetter from "../../functions/CapitalizeFirstLetter";
 
 type Props = {
   element: IElementType;
@@ -43,7 +44,7 @@ export default function Overview({
 
   useEffect(() => {
     async function loadImage() {
-      const chapterUrl = await chapterIconFilter(name);
+      const chapterUrl = await chapterIconFilter(capitalizeFirstLetter(name));
 
       setChapterIcon(chapterUrl);
     }

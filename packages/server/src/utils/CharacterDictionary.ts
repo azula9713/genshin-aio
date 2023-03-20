@@ -204,7 +204,7 @@ const characterMapping: ICharacterDictionary = {
   },
   aloy: {
     characterId: 10000062,
-    depotId: 6002,
+    depotId: 6201,
   },
   shenhe: {
     characterId: 10000063,

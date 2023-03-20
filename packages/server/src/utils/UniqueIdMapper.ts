@@ -8,7 +8,6 @@ export default function uniqueIdMapper(
       case 504:
         id = "traveler_anemo";
         break;
-
       case 507:
         id = "traveler_electro";
         break;
