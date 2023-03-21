@@ -68,7 +68,7 @@ export default function Overview({
             <img
               className="w-5 h-5 mr-2"
               src={elementalImageFilter[element]}
-              alt={elementalImageFilter[element]}
+              alt={element}
             />
           </OverviewItemHolder>
           <OverviewItemHolder
@@ -120,7 +120,7 @@ export default function Overview({
             <img
               className="w-10 h-10 mr-2"
               src={elementalImageFilter[element]}
-              alt={elementalImageFilter[element]}
+              alt={element}
             />
           </OverviewItemHolder>
           <OverviewItemHolder

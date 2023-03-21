@@ -3,6 +3,8 @@ import RarityStars from "../../components/Character/RarityStars";
 import { ICharacterData } from "../../interfaces/CharacterInterface";
 
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 type Props = {
   characterData: ICharacterData;
@@ -55,9 +57,10 @@ export default function CharacterPCView({
       </div>
       <div className="w-full h-[600px] 2xl:h-[800px] flex items-center justify-end">
         <div className={`w-4/5 h-full ${characterName}`}>
-          <img
+          <LazyLoadImage
             src={splashImageUrl}
-            alt=""
+            alt={name}
+            effect="blur"
             style={{
               height: "100%",
               marginLeft: "15%",

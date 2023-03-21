@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { ICharacter } from "../../interfaces/CharacterInterface";
 import colorFilter, { bgColorFilter } from "../../static/ThumbnailColourFilter";
@@ -44,10 +45,10 @@ export default function CharacterThumbnail({ character }: Props) {
         </div>
       </Link>
       <div className="absolute top-0 left-0 flex items-center text-white p-2 ml-[-5px] mt-[-5px]">
-        <img
-          className="w-4 h-4 lg:w-5 lg:h-5"
+        <LazyLoadImage
           src={elementalImageFilter[character.element.name]}
-          alt={elementalImageFilter[character.element.name]}
+          alt={character.element.name}
+          className="w-4 h-4 lg:w-5 lg:h-5"
         />
       </div>
     </div>
