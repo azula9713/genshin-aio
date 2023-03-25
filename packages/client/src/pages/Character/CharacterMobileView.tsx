@@ -11,6 +11,7 @@ import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
 import { ICharacterData } from "../../interfaces/CharacterInterface";
+import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
 
 type Props = {
   characterData: ICharacterData;
@@ -22,13 +23,13 @@ export default function CharacterMobileView({
   characterName,
 }: Props) {
   const elementalBgPicker = {
-    Dendro: `url(${DendroBG})`,
-    Geo: `url(${GeoBG})`,
-    Anemo: `url(${AnemoBG})`,
-    Hydro: `url(${HydroBG})`,
-    Pyro: `url(${PyroBG})`,
-    Cryo: `url(${CryoBG})`,
-    Electro: `url(${ElectroBG})`,
+    Dendro: DendroBG,
+    Geo: GeoBG,
+    Anemo: AnemoBG,
+    Hydro: HydroBG,
+    Pyro: PyroBG,
+    Cryo: CryoBG,
+    Electro: ElectroBG,
   };
 
   const {
@@ -48,23 +49,13 @@ export default function CharacterMobileView({
 
   return (
     <div className="pt-2 md:p-10 px-2 xl:hidden w-full">
-      <div
+      <LazyBackgroundImg
         className="h-full w-full rounded-lg"
-        style={{
-          backgroundImage: elementalBgPicker[element?.name],
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-        }}
+        img={elementalBgPicker[element?.name]}
       >
-        <div
+        <LazyBackgroundImg
           className="h-[420px] md:h-[520px] w-full flex flex-col items-start justify-end"
-          style={{
-            backgroundImage: `url(${splashImageUrl})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
+          img={splashImageUrl}
         >
           <div className="flex flex-col items-start w-full pl-4">
             <RarityStars stars={stars} />
@@ -77,8 +68,8 @@ export default function CharacterMobileView({
               {name}
             </h2>
           </div>
-        </div>
-      </div>
+        </LazyBackgroundImg>
+      </LazyBackgroundImg>
       <Overview
         element={element?.name}
         weapon={weaponType}

@@ -1,9 +1,11 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import Overview from "../../components/Character/Overview";
 import RarityStars from "../../components/Character/RarityStars";
+import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
 import { ICharacterData } from "../../interfaces/CharacterInterface";
 
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 type Props = {
@@ -28,17 +30,9 @@ export default function CharacterPCView({
     region,
   } = characterData;
   return (
-    <div
-      className="coverBg hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
-      style={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${
-          nameCard || StaticNameCard
-        })`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        position: "relative",
-      }}
+    <LazyBackgroundImg
+      img={nameCard || StaticNameCard}
+      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
     >
       <div className="w-1/2 flex flex-col items-start xl:h-[600px] 2xl:h-[800px] mr-4 absolute z-10">
         <div className="w-full flex items-center justify-start space-x-6">
@@ -69,6 +63,6 @@ export default function CharacterPCView({
           />
         </div>
       </div>
-    </div>
+    </LazyBackgroundImg>
   );
 }
