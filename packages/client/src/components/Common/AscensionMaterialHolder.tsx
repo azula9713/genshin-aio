@@ -41,7 +41,7 @@ export default function AscensionMaterialHolder({
 
   if (materialData && materialData.name) {
     return (
-      <div className="w-full flex items-center justify-start space-x-3 my-1 bg-gray-800 rounded-md px-2 h-10">
+      <div className="w-full flex items-center justify-start space-x-3 my-1 bg-slate-700 rounded-md px-2 h-10">
         <TextLabel label={materialData.name} classNames="w-full" />
         <div
           className="flex justify-end items-center pt-1 w-1/4"

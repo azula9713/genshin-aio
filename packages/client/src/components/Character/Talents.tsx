@@ -9,9 +9,11 @@ type Props = {
 export default function Talents({ skills, passiveTalents }: Props) {
   console.log(skills);
   return (
-    <div className="mt-2 bg-slate-200 dark:bg-slate-600 flex flex-col lg:flex-row lg:space-x-3 items-start justify-center p-4 rounded-lg shadow-md mb-2 w-full">
+    <div className="mt-2 bg-slate-200 dark:bg-slate-800 flex flex-col lg:flex-row lg:space-x-3 items-start justify-center p-4 rounded-lg shadow-md mb-2 w-full">
       <div className="w-full">
-        <p className="font-semibold text-lg"> Character Skills</p>
+        <p className="font-bold text-sm text-slate-400 uppercase">
+          Character Skills
+        </p>
         <div className="w-full flex flex-col items-start justify-center">
           {skills.map((skill) => (
             <TalentCard talent={skill} key={skill.id} />
@@ -19,7 +21,9 @@ export default function Talents({ skills, passiveTalents }: Props) {
         </div>
       </div>
       <div className="w-full mt-3">
-        <p className="font-semibold text-lg">Passive Talents</p>
+        <p className="font-bold text-sm text-slate-400 uppercase">
+          Passive Talents
+        </p>
         <div className="w-full flex flex-col items-start justify-center">
           {passiveTalents.map((passivetalent) => (
             <TalentCard talent={passivetalent} key={passivetalent.id} />

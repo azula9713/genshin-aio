@@ -40,7 +40,7 @@ export default function TalentCard({ talent }: Props) {
   }
 
   return (
-    <div className="w-full bg-gray-300 dark:bg-gray-800 my-1 p-1 rounded-md">
+    <div className="w-full bg-gray-300 dark:bg-slate-700 my-1 p-1 rounded-md">
       <div className="flex items-center justify-between w-full">
         <div className="w-full flex items-center justify-start space-x-3">
           <img src={talent.icon} alt={talent.name} width={60} />

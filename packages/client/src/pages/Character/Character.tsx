@@ -56,6 +56,7 @@ export default function Character() {
   return (
     <Container>
       {/* Mobile and TabletView */}
+
       <CharacterMobileView
         characterData={characterData}
         characterName={characterName}

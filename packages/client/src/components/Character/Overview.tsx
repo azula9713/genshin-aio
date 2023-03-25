@@ -54,9 +54,9 @@ export default function Overview({
   return (
     <div className="w-full">
       {/* Mobile and Tablet View */}
-      <div className="mt-2 bg-slate-200 dark:bg-slate-600 flex flex-col items-center justify-center p-4 rounded-lg shadow-md xl:hidden">
+      <div className="mt-2 bg-slate-200 dark:bg-slate-800 bg-opacity-50 flex flex-col items-center justify-center p-4 rounded-lg shadow-md xl:hidden">
         <p
-          className="text-sm md:text-base lg:text-lg mb-4 italic w-full"
+          className="text-sm md:text-base lg:text-lg mb-4 italic w-full text-slate-400"
           style={{
             lineHeight: "1rem",
           }}

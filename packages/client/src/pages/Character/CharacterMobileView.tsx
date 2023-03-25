@@ -54,7 +54,7 @@ export default function CharacterMobileView({
         img={elementalBgPicker[element?.name]}
       >
         <LazyBackgroundImg
-          className="h-[420px] md:h-[520px] w-full flex flex-col items-start justify-end"
+          className="h-[420px] md:h-[520px] w-full flex flex-col items-start justify-end rounded-lg"
           img={splashImageUrl}
         >
           <div className="flex flex-col items-start w-full pl-4">
