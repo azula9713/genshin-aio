@@ -28,10 +28,11 @@ export default function CharacterPCView({
     constellation,
     description,
     region,
+    nameId,
   } = characterData;
   return (
     <LazyBackgroundImg
-      img={nameCard || StaticNameCard}
+      img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
       className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
     >
       <div className="w-1/2 flex flex-col items-start xl:h-[600px] 2xl:h-[800px] mr-4 absolute z-10">
@@ -50,7 +51,7 @@ export default function CharacterPCView({
         />
       </div>
       <div className="w-full h-[600px] 2xl:h-[800px] flex items-center justify-end">
-        <div className={`w-4/5 h-full ${characterName}`}>
+        <div className={`w-4/5 h-full ${nameId}`}>
           <LazyLoadImage
             src={splashImageUrl}
             alt={name}

@@ -19,6 +19,8 @@ export default function LazyBackgroundImg({
     setLoaded(true);
   };
 
+  console.log("img", img);
+
   return (
     <div
       className={className}
