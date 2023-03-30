@@ -64,6 +64,7 @@ export interface IAscensionData {
 
 export interface ICharacterData extends ICharacter {
   description: string;
+  title: string;
   weaponType: IWeaponType;
   ascensionData: IAscensionData[];
   affiliation: string;

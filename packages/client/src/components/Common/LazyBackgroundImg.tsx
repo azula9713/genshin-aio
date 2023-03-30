@@ -5,6 +5,7 @@ type Props = {
   children?: JSX.Element[] | JSX.Element;
   className?: string;
   style?: React.CSSProperties;
+  isDarkened?: boolean;
 };
 
 export default function LazyBackgroundImg({
@@ -12,6 +13,7 @@ export default function LazyBackgroundImg({
   children,
   className,
   style,
+  isDarkened,
 }: Props) {
   const [loaded, setLoaded] = useState(false);
 
@@ -19,13 +21,15 @@ export default function LazyBackgroundImg({
     setLoaded(true);
   };
 
-  console.log("img", img);
-
   return (
     <div
       className={className}
       style={{
-        backgroundImage: `url(${img})`,
+        backgroundImage: `${
+          isDarkened
+            ? "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),"
+            : ""
+        }url(${img})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
         backgroundSize: "cover",

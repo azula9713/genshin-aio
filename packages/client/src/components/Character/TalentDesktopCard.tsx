@@ -18,8 +18,8 @@ export default function TalentDesktopCard({ talent }: Props) {
   }
 
   return (
-    <div className="w-full p-2 rounded-md xl:bg-slate-900 xl:bg-opacity-80">
-      <div className="w-full flex items-center justify-start space-x-3">
+    <div className="w-full p-2 rounded-md xl:bg-slate-900 xl:bg-opacity-50">
+      <div className="w-full flex items-center justify-between space-x-3">
         <img src={talent.icon} alt={talent.name} width={60} />
         <TextLabel
           label={talent.name}
@@ -44,6 +44,10 @@ export default function TalentDesktopCard({ talent }: Props) {
         animate={{
           opacity: isExpanded ? 1 : 0,
           height: isExpanded ? "auto" : 0,
+        }}
+        exit={{
+          opacity: 0,
+          height: 0,
         }}
         transition={{ duration: 0.6 }}
         className={`${isExpanded ? "block" : "hidden"}`}

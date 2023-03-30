@@ -8,6 +8,7 @@ import { ICharacterData } from "../../interfaces/CharacterInterface";
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import TalentsDesktop from "../../components/Character/TalentsDesktop";
+import elementalImageFilter from "../../static/ElementalImagePicker";
 
 type Props = {
   characterData: ICharacterData;
@@ -30,18 +31,46 @@ export default function CharacterPCView({
     affiliation,
     constellation,
     description,
+    title,
     region,
     nameId,
   } = characterData;
   return (
     <LazyBackgroundImg
       img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
-      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[600px] 2xl:max-h-[800px] m-4 rounded-lg"
+      // img=""
+      isDarkened
+      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[calc(100vh-6rem)] h-max m-4 rounded-lg"
     >
-      <div className="w-1/2 flex flex-col items-start xl:h-[600px] 2xl:h-[800px] mr-4 absolute z-10">
-        <div className="w-full flex items-center justify-start space-x-6">
-          <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-6xl">{name}</h2>
+      <div className="w-1/2 flex flex-col items-start mr-4 absolute z-10">
+        <div className="flex items-center justify-start space-x-1 mb-5">
+          <img
+            className="w-10 h-10 mr-2"
+            src={elementalImageFilter[element?.name]}
+            alt={element?.id}
+          />
           <RarityStars stars={stars} />
+        </div>
+        <div className="w-full flex flex-col items-start justify-center">
+          <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-9xl">{name}</h2>
+          <h4 className="uppercase font-semibold text-3xl italic tracking-widest mt-6 font-algoindeEnka">
+            {title}
+          </h4>
+
+          {/* description */}
+
+          <p className="mt-6 text-2xl font-semibold leading-8 tracking-wide text-white w-2/3 italic">
+            "
+            {description?.split(" ").length > 100 ? (
+              <span>
+                {description?.split(" ").slice(0, 100).join(" ")}...
+                <span className="text-blue-500">Read More</span>
+              </span>
+            ) : (
+              description
+            )}
+            "
+          </p>
         </div>
         <Overview
           element={element?.name}
@@ -53,13 +82,12 @@ export default function CharacterPCView({
           name={characterName}
         />
 
-        {/* Talents */}
-        <div className="w-full m-4 pr-9">
+        {/* <div className="w-full m-4 pr-9">
           <TalentsDesktop title="Hero Skills" talents={skills} />
           <TalentsDesktop title="Passive Talents" talents={passiveTalents} />
-        </div>
+        </div> */}
       </div>
-      <div className="w-full h-[600px] 2xl:h-[800px] flex items-center justify-end">
+      <div className="w-full xl:min-h-[calc(100vh-12rem)] flex items-center justify-end">
         <div className={`w-4/5 h-full ${nameId}`}>
           <LazyLoadImage
             src={splashImageUrl}

@@ -1,15 +1,14 @@
-import OverviewItemHolder from "../Common/OverviewItemHolder";
-import weaponTypeParser from "../../functions/WeaponTypeParser";
 import {
   IElementType,
   IRegion,
   IWeaponType,
 } from "../../interfaces/CharacterInterface";
-import elementalImageFilter from "../../static/ElementalImagePicker";
-import weaponIconFilter from "../../static/WeaponIconFilter";
+
 import chapterIconFilter from "../../static/ChapterIconFilter";
 import { useEffect, useState } from "react";
 import capitalizeFirstLetter from "../../functions/CapitalizeFirstLetter";
+import PCOverview from "./PC/PCOverview";
+import MobileOverview from "./Mobile/MobileOverview";
 
 type Props = {
   element: IElementType;
@@ -54,105 +53,29 @@ export default function Overview({
   return (
     <div className="w-full">
       {/* Mobile and Tablet View */}
-      <div className="mt-2 bg-slate-200 dark:bg-slate-800 bg-opacity-50 flex flex-col items-center justify-center p-4 rounded-lg shadow-md xl:hidden">
-        <p
-          className="text-sm md:text-base lg:text-lg mb-4 italic w-full text-slate-400"
-          style={{
-            lineHeight: "1rem",
-          }}
-        >
-          "{description}"
-        </p>
-        <div className="flex items-center w-full justify-between">
-          <OverviewItemHolder label="Element" value={element}>
-            <img
-              className="w-5 h-5 mr-2"
-              src={elementalImageFilter[element]}
-              alt={element}
-            />
-          </OverviewItemHolder>
-          <OverviewItemHolder
-            label="Weapon Type"
-            value={weaponTypeParser(weapon) as string}
-          >
-            <img
-              className="w-6 h-6 mr-2"
-              src={weaponIconFilter[weapon]}
-              alt={weapon}
-              style={{
-                filter: "brightness(0) invert(1)",
-              }}
-            />
-          </OverviewItemHolder>
-        </div>
-        <div className="flex items-center w-full justify-between mt-4">
-          <OverviewItemHolder label="Affiliation" value={affiliation}>
-            <img
-              className="w-6 h-6 mr-2"
-              src={regionIcon}
-              alt={region?.regionName}
-            />
-          </OverviewItemHolder>
-          <OverviewItemHolder label="Constellation" value={constellation}>
-            <img
-              className="w-6 h-6 mr-2"
-              src={chapterIcon as string}
-              alt={name}
-            />
-          </OverviewItemHolder>
-        </div>
-      </div>
+      <MobileOverview
+        affiliation={affiliation}
+        chapterIcon={chapterIcon}
+        constellation={constellation}
+        element={element}
+        name={name}
+        region={region}
+        regionIcon={regionIcon}
+        weapon={weapon}
+        description={description}
+      />
       {/* Mobile and Tablet View Ends*/}
 
-      {/* PC View */}
-      <div className="hidden xl:flex mt-2 flex-col items-start justify-center p-4">
-        <p
-          className="w-3/4 leading-5 text-lg italic py-4"
-          style={{
-            lineHeight: "1rem",
-          }}
-        >
-          "{description}"
-        </p>
-
-        <div className="w-full flex items-start justify-evenly">
-          <OverviewItemHolder label="Element" value={element}>
-            <img
-              className="w-10 h-10 mr-2"
-              src={elementalImageFilter[element]}
-              alt={element}
-            />
-          </OverviewItemHolder>
-          <OverviewItemHolder
-            label="Weapon Type"
-            value={weaponTypeParser(weapon) as string}
-          >
-            <img
-              className="w-10 h-10 mr-2"
-              src={weaponIconFilter[weapon]}
-              alt={weapon}
-              style={{
-                filter: "brightness(0) invert(1)",
-              }}
-            />
-          </OverviewItemHolder>
-          <OverviewItemHolder label="Affiliation" value={affiliation}>
-            <img
-              className="w-10 h-10 mr-2"
-              src={regionIcon}
-              alt={region?.regionName}
-            />
-          </OverviewItemHolder>
-          <OverviewItemHolder label="Constellation" value={constellation}>
-            <img
-              className="w-10 h-10 mr-2"
-              src={chapterIcon as string}
-              alt={name}
-            />
-          </OverviewItemHolder>
-        </div>
-      </div>
-      {/* PC View Ends*/}
+      <PCOverview
+        affiliation={affiliation}
+        chapterIcon={chapterIcon}
+        constellation={constellation}
+        element={element}
+        name={name}
+        region={region}
+        regionIcon={regionIcon}
+        weapon={weapon}
+      />
     </div>
   );
 }

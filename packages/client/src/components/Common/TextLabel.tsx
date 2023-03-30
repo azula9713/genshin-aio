@@ -6,7 +6,7 @@ type Props = {
 export default function TextLabel({ label, classNames }: Props) {
   return (
     <label
-      className={`dark:font-semibold font-bold text-base text-black dark:text-[#c4c4c4] xl:text-white xl:dark:text-white xl:text-sm leading-4 ${classNames}`}
+      className={`font-bold tracking-wide text-sm text-[#c4c4c4] xl:text-gray-200 xl:text-md leading-4 ${classNames}`}
     >
       {label}
     </label>
