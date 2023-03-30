@@ -101,6 +101,7 @@ export const getCharacterById = async (
         name: decryptTextAsset(element?.name),
       },
       weaponType: characterData.weaponType,
+      title: decryptTextAsset(characterData.details?.title),
       nameCard: nameCard?.pictures[1].url || "No Name Card",
       ascensionData,
       splashImageUrl,
