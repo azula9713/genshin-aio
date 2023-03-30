@@ -6,7 +6,7 @@ type Props = {
   passiveTalents: ITalent[];
 };
 
-export default function Talents({ skills, passiveTalents }: Props) {
+export default function TalentsMobile({ skills, passiveTalents }: Props) {
   console.log(skills);
   return (
     <div className="mt-2 bg-slate-200 dark:bg-slate-800 flex flex-col lg:flex-row lg:space-x-3 items-start justify-center p-4 rounded-lg shadow-md mb-2 w-full">

@@ -1,6 +1,6 @@
 import AscensionMats from "../../components/Character/AscensionMats";
 import RarityStars from "../../components/Character/RarityStars";
-import Talents from "../../components/Character/Talents";
+import TalentsMobile from "../../components/Character/TalentsMobile";
 import Overview from "../../components/Character/Overview";
 
 import ElectroBG from "../../assets/images/bgs/constellation_template__electro.jpg";
@@ -81,7 +81,7 @@ export default function CharacterMobileView({
       />
 
       {skills && passiveTalents && (
-        <Talents skills={skills} passiveTalents={passiveTalents} />
+        <TalentsMobile skills={skills} passiveTalents={passiveTalents} />
       )}
 
       {ascensionData && <AscensionMats ascensionData={ascensionData} />}

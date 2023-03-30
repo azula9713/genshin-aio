@@ -7,6 +7,7 @@ import { ICharacterData } from "../../interfaces/CharacterInterface";
 
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import TalentsDesktop from "../../components/Character/TalentsDesktop";
 
 type Props = {
   characterData: ICharacterData;
@@ -23,6 +24,8 @@ export default function CharacterPCView({
     nameCard,
     stars,
     name,
+    skills,
+    passiveTalents,
     weaponType,
     affiliation,
     constellation,
@@ -49,6 +52,12 @@ export default function CharacterPCView({
           description={description}
           name={characterName}
         />
+
+        {/* Talents */}
+        <div className="w-full m-4 pr-9">
+          <TalentsDesktop title="Hero Skills" talents={skills} />
+          <TalentsDesktop title="Passive Talents" talents={passiveTalents} />
+        </div>
       </div>
       <div className="w-full h-[600px] 2xl:h-[800px] flex items-center justify-end">
         <div className={`w-4/5 h-full ${nameId}`}>

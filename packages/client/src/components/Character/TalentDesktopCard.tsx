@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { ITalent } from "../../interfaces/CharacterInterface";
@@ -10,7 +10,7 @@ type Props = {
   talent: ITalent;
 };
 
-export default function TalentCard({ talent }: Props) {
+export default function TalentDesktopCard({ talent }: Props) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   function handleExpansion() {
@@ -18,16 +18,13 @@ export default function TalentCard({ talent }: Props) {
   }
 
   return (
-    <div className="w-full bg-gray-300 dark:bg-slate-700 my-1 p-1 rounded-md">
-      <div className="flex items-center justify-between w-full">
-        <div className="w-full flex items-center justify-start space-x-3">
-          <img src={talent.icon} alt={talent.name} width={60} />
-          <TextLabel
-            label={talent.name}
-            classNames="text-black dark:text-white"
-          />
-        </div>
-
+    <div className="w-full p-2 rounded-md xl:bg-slate-900 xl:bg-opacity-80">
+      <div className="w-full flex items-center justify-start space-x-3">
+        <img src={talent.icon} alt={talent.name} width={60} />
+        <TextLabel
+          label={talent.name}
+          classNames="text-black dark:text-white"
+        />
         <div
           className="w-1/5 mx-2 flex items-center justify-end"
           onClick={handleExpansion}
@@ -39,7 +36,6 @@ export default function TalentCard({ talent }: Props) {
           />
         </div>
       </div>
-
       <motion.div
         initial={{
           height: 0,
