@@ -11,7 +11,9 @@ export default function TalentsDesktop({ title, talents }: Props) {
 
   return (
     <div className="mb-4">
-      <div>{title}</div>
+      <h5 className="uppercase font-semibold tracking-wide font-algoindeEnka text-lg">
+        {title}
+      </h5>
       <div className="w-full flex items-start justify-between space-x-2 mt-2">
         {talents &&
           filteredTalents.map((talent) => (

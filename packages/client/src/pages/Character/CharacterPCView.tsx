@@ -58,7 +58,6 @@ export default function CharacterPCView({
           </h4>
 
           {/* description */}
-
           <p className="mt-6 text-2xl font-semibold leading-8 tracking-wide text-white w-2/3 italic">
             "
             {description?.split(" ").length > 100 ? (
@@ -82,10 +81,10 @@ export default function CharacterPCView({
           name={characterName}
         />
 
-        {/* <div className="w-full m-4 pr-9">
+        <div className="w-full m-4 mt-10">
           <TalentsDesktop title="Hero Skills" talents={skills} />
           <TalentsDesktop title="Passive Talents" talents={passiveTalents} />
-        </div> */}
+        </div>
       </div>
       <div className="w-full xl:min-h-[calc(100vh-12rem)] flex items-center justify-end">
         <div className={`w-4/5 h-full ${nameId}`}>
