@@ -11,13 +11,13 @@ import {
 } from "enka-network-api";
 import { LanguageCode } from "enka-network-api/types/client/CachedAssetsManager";
 
-const decryptTextAsset = (param: TextAssets | undefined, lang = "en") => {
+function decryptTextAsset(param: TextAssets | undefined, lang = "en") {
   try {
     if (param) return param.get(lang as LanguageCode);
   } catch (error) {
     return "";
   }
-};
+}
 
 function mapSkills(skills: Skill[]): any[] {
   return skills.map((skill) => ({

@@ -25,10 +25,12 @@ import factionMapper from "../utils/FactionMapper";
 import logger from "../utils/logger";
 import uniqueIdMapper from "../utils/UniqueIdMapper";
 
-export const getAllCharacters = async (req: Request<{}, {}>, res: Response) => {
+export async function getAllCharacters(req: Request<{}, {}>, res: Response) {
   try {
+    // Get all characters from Enka
     const response: CharacterData[] = getAllChatactersFromEnka();
 
+    // Map each character to a more readable format
     const characters = response.map((character) => {
       const { _nameId, id, rarity, icon, element, skillDepotId } = character;
 
@@ -47,16 +49,17 @@ export const getAllCharacters = async (req: Request<{}, {}>, res: Response) => {
       };
     });
 
+    // Return the characters
     res.send(characters);
   } catch (error) {
     logger.error(error);
   }
-};
+}
 
-export const getCharacterById = async (
+export async function getCharacterById(
   req: Request<{}, {}, GetCharacterEnkaIdInput["query"]>,
   res: Response
-) => {
+) {
   const { characterNameId } = req.query;
 
   try {
@@ -125,4 +128,4 @@ export const getCharacterById = async (
   } catch (error) {
     logger.error(error);
   }
-};
+}
