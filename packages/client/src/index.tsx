@@ -12,13 +12,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <main
+    <div
       style={{
         cursor: "url(" + CustomNormalCursor + "), auto",
       }}
     >
       <App />
-    </main>
+    </div>
   </React.StrictMode>
 );
 

@@ -5,8 +5,8 @@ import socials from "../../static/Social";
 
 export default function Footer() {
   return (
-    <footer className="w-full p-2">
-      <div className="w-full p-2">
+    <footer className="w-full p-2 footer">
+      <div className="w-full p-2 lg:flex items-start justify-center">
         <div className="w-full mb-2 p-2">
           <LogoHolder />
           <div className="w-full flex flex-col items-center mt-2">
@@ -27,9 +27,9 @@ export default function Footer() {
         </div>
         <div className="w-full border-green-500 border-2 mb-2 p-2">Helpers</div>
         <div className="w-full border-blue-500 border-2 mb-2 p-2">Others</div>
-        <div>
-          <div className="text-slate-400 text-xs font-algoindeEnka text-center py-1">{`© ${new Date().getFullYear()} Genshin AIO`}</div>
-        </div>
+      </div>
+      <div>
+        <div className="text-slate-400 text-xs font-algoindeEnka text-center py-1">{`© ${new Date().getFullYear()} Genshin AIO`}</div>
       </div>
     </footer>
   );
