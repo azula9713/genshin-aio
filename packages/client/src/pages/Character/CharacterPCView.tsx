@@ -40,9 +40,9 @@ export default function CharacterPCView({
       img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
       // img=""
       isDarkened
-      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[calc(100vh-6rem)] h-max m-4 rounded-lg"
+      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[calc(125vh-6rem)] 2xl:min-h-[calc(100vh-6rem)] h-max m-4 rounded-lg"
     >
-      <div className="w-1/2 flex flex-col items-start mr-4 absolute z-10">
+      <div className="w-2/3 flex flex-col items-start mr-4 absolute z-10">
         <div className="flex items-center justify-start space-x-1 mb-5">
           <img
             className="w-10 h-10 mr-2"
@@ -52,7 +52,7 @@ export default function CharacterPCView({
           <RarityStars stars={stars} />
         </div>
         <div className="w-full flex flex-col items-start justify-center">
-          <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-9xl">{name}</h2>
+          <h2 className="font-algoindeEnka xl:text-5xl 2xl:text-8xl">{name}</h2>
           <h4 className="uppercase font-semibold text-3xl italic tracking-widest mt-6 font-algoindeEnka">
             {title}
           </h4>
@@ -81,7 +81,7 @@ export default function CharacterPCView({
           name={characterName}
         />
 
-        <div className="w-full m-4 mt-10">
+        <div className="2xl:w-3/4 xl:w-full mx-4 my-10">
           <TalentsDesktop title="Hero Skills" talents={skills} />
           <TalentsDesktop title="Passive Talents" talents={passiveTalents} />
         </div>
