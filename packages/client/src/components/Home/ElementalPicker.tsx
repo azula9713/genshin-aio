@@ -23,9 +23,9 @@ export default function ElementalPicker() {
         <h1 className="font-bold my-2 text-3xl xl:text-5xl px-4">Characters</h1>
       </div>
       <div className="w-full flex items-center justify-between pb-3 px-4 mb-3 max-w-[400px]">
-        {elements.map((element, index) => (
+        {elements.map((element) => (
           <div
-            key={index}
+            key={element}
             onClick={() => {
               if (selectedElement !== element) {
                 setSelectedElement(element);
