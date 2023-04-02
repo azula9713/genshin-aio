@@ -40,7 +40,7 @@ export default function CharacterPCView({
       img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
       // img=""
       isDarkened
-      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[calc(125vh-6rem)] 2xl:min-h-[calc(100vh-6rem)] h-max m-4 rounded-lg"
+      className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:min-h-[calc(125vh-6rem)] 2xl:min-h-[calc(105vh-6rem)] h-max m-4 rounded-lg"
     >
       <div className="w-2/3 flex flex-col items-start mr-4 absolute z-10">
         <div className="flex items-center justify-start space-x-1 mb-5">
