@@ -9,9 +9,12 @@ type Props = {
 
 export default function SocialIcon({ name, url, icon, iconSize = 24 }: Props) {
   return (
-    <Link to={url} target="_blank">
-      <div className="p-1">
+    <Link to={url} target="_blank" className="w-full cursor-pointer">
+      <div className="p-1 w-full flex flex-col lg:flex-row items-center lg:justify-start justify-center">
         <img src={icon} alt={name} width={iconSize} />
+        <div className="hidden lg:block hover:font-bold transition-all duration-300 hover:underline">
+          {name}
+        </div>
       </div>
     </Link>
   );

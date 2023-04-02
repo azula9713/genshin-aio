@@ -1,15 +1,23 @@
-import React from "react";
 import Lottie from "react-lottie";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as genshinLogo from "../../assets/genshin-logo.json";
 
 type Props = {
-  height?: number;
-  width?: number;
+  size?: number;
+  className?: string;
 };
 
-export default function LogoHolder({ height = 50, width = 50 }: Props) {
+export default function LogoHolder({ size = 50, className }: Props) {
+  const navigate = useNavigate();
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -20,13 +28,22 @@ export default function LogoHolder({ height = 50, width = 50 }: Props) {
   };
 
   return (
-    <Link to="/" className="w-full">
+    <div
+      className={className}
+      onClick={() => {
+        if (window.location.pathname === "/") {
+          scrollToTop();
+        } else {
+          navigate("/");
+        }
+      }}
+    >
       <Lottie
         options={defaultOptions}
         isClickToPauseDisabled
-        height={height}
-        width={width}
+        height={size}
+        width={size}
       />
-    </Link>
+    </div>
   );
 }
