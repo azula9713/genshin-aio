@@ -5,7 +5,7 @@ type Props = {
   selectedTalent?: ITalent;
 };
 
-export default function CharacterSkill({ selectedTalent }: Props) {
+export default function CharacterTalentDetails({ selectedTalent }: Props) {
   return (
     <div>
       <h1>{selectedTalent?.name}</h1>
