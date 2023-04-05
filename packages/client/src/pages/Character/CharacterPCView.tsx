@@ -7,7 +7,7 @@ import RarityStars from "../../components/Character/RarityStars";
 import CharacterSkill from "../../components/Character/PC/CharacterTalent";
 import TalentIcon from "../../components/Character/PC/TalentIcon";
 import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
-import { ICharacterData } from "../../interfaces/CharacterInterface";
+import { ICharacterData, ITalent } from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
@@ -40,6 +40,13 @@ export default function CharacterPCView({
   } = characterData;
 
   const [selectedTalentId, setSelectedTalentId] = useState<number>(0);
+  const [allTalents, setAllTalents] = useState<ITalent[]>([]);
+
+  useMemo(() => {
+    if (skills?.length > 0 && passiveTalents?.length > 0) {
+      setAllTalents([...skills, ...passiveTalents]);
+    }
+  }, [skills, passiveTalents]);
 
   useMemo(() => {
     if (skills && skills.length > 0) {
@@ -52,7 +59,7 @@ export default function CharacterPCView({
       <LazyBackgroundImg
         img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
         isDarkened
-        className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:h-[650px] 2xl:h-[900px] rounded-lg"
+        className="hidden xl:flex w-[calc(100%-3rem)] flex-col relative items-start justify-between p-10 xl:h-[650px] 2xl:h-[700px] rounded-lg"
       >
         <div className="w-2/3 flex flex-col items-start mr-4 absolute z-10">
           <div className="flex items-center justify-start space-x-1 mb-5">
@@ -87,29 +94,34 @@ export default function CharacterPCView({
               style={{
                 height: "100%",
                 marginLeft: "18%",
-                marginTop: "7%",
-                scale: "1.5",
+                marginTop: "5%",
+                scale: "1.2",
               }}
             />
           </div>
         </div>
       </LazyBackgroundImg>
       <div className="w-full px-7 py-4">
-        <div className="w-full flex items-center justify-start">
-          <h4 className="font-algoindeEnka text-4xl">Talents</h4>
-          <div className="w-full ml-8 flex items-center justify-start space-x-2">
-            {characterData.skills?.map((skill, index) => (
-              <TalentIcon
-                talent={skill}
-                key={skill.id}
-                selectedTalentId={selectedTalentId}
-                setSelectedTalentId={setSelectedTalentId}
-              />
-            ))}
+        <div className="w-full flex flex-col items-start justify-center mt-8">
+          <h4 className="font-algoindeEnka text-6xl">Talents</h4>
+          <div className="w-full flex items-center justify-start space-x-8 my-8">
+            {/* merge skills and passive talents to a one array and map. Filter out talents without name  */}
+            {allTalents &&
+              allTalents
+                .filter((skill) => skill.name !== "")
+                .map((skill) => (
+                  <TalentIcon
+                    talent={skill}
+                    key={skill.id}
+                    selectedTalentId={selectedTalentId}
+                    setSelectedTalentId={setSelectedTalentId}
+                    element={element?.name}
+                  />
+                ))}
           </div>
         </div>
         <CharacterSkill
-          selectedTalent={characterData.skills?.find(
+          selectedTalent={allTalents?.find(
             (skill) => skill.id === selectedTalentId
           )}
         />

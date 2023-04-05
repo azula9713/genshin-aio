@@ -80,12 +80,7 @@ export interface ICharacterData extends ICharacter {
     icon?: string;
   }[];
   skills: ITalent[];
-  passiveTalents: {
-    id: number;
-    name: string;
-    description: string;
-    icon: string;
-  }[];
+  passiveTalents: ITalent[];
   constellations: {
     id: number;
     name: string;
