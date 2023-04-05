@@ -30,9 +30,9 @@ export default function PCOverview({
   affiliation,
 }: Props) {
   return (
-    <div className="hidden xl:flex mt-2 flex-col items-start justify-center p-4">
+    <div className="hidden xl:flex mt-4 2xl:mt-16 flex-col items-start justify-center py-4">
       <div className="w-full flex flex-col items-start justify-evenly">
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-start">
           <OverviewItemHolder label="Element" value={element}>
             <img
               className="w-12 h-12 mr-2"
@@ -54,7 +54,7 @@ export default function PCOverview({
             />
           </OverviewItemHolder>
         </div>
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-start">
           <OverviewItemHolder label="Affiliation" value={affiliation}>
             <img
               className="w-12 h-12 mr-2"
@@ -63,11 +63,7 @@ export default function PCOverview({
             />
           </OverviewItemHolder>
           <OverviewItemHolder label="Constellation" value={constellation}>
-            <img
-              className="w-12 h-12 mr-2"
-              src={chapterIcon as string}
-              alt={name}
-            />
+            <img className="w-12 h-12 mr-2" src={chapterIcon} alt={name} />
           </OverviewItemHolder>
         </div>
       </div>

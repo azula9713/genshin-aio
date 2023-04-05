@@ -72,11 +72,7 @@ export default function MobileOverview({
           />
         </OverviewItemHolder>
         <OverviewItemHolder label="Constellation" value={constellation}>
-          <img
-            className="w-6 h-6 mr-2"
-            src={chapterIcon as string}
-            alt={name}
-          />
+          <img className="w-6 h-6 mr-2" src={chapterIcon} alt={name} />
         </OverviewItemHolder>
       </div>
     </div>

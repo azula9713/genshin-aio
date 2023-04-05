@@ -11,7 +11,7 @@ const Container: React.FC<Props> = ({ children }) => {
   }
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 w-full flex flex-col items-center justify-start">
       <Header />
       <main className="bg-gray-900 text-white overflow-x-hidden min-h-screen w-full flex flex-col items-center justify-start mt-16">
         {children}
