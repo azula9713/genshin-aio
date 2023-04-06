@@ -17,7 +17,7 @@ enka.cachedAssetsManager.activateAutoCacheUpdater({
   },
 });
 
-export function getAllChatactersFromEnka() {
+export function getAllCharactersFromEnka() {
   return enka.getAllCharacters();
 }
 

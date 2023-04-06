@@ -7,7 +7,7 @@ import { Request, Response } from "express";
 
 import { GetCharacterEnkaIdInput } from "../schemas/enkaCharacter.schema";
 import {
-  getAllChatactersFromEnka,
+  getAllCharactersFromEnka,
   getCharacterByEnkaId,
 } from "../services/EnkaClient";
 import characterMapping from "../utils/CharacterDictionary";
@@ -28,7 +28,7 @@ import uniqueIdMapper from "../utils/UniqueIdMapper";
 export async function getAllCharacters(req: Request<{}, {}>, res: Response) {
   try {
     // Get all characters from Enka
-    const response: CharacterData[] = getAllChatactersFromEnka();
+    const response: CharacterData[] = getAllCharactersFromEnka();
 
     // Map each character to a more readable format
     const characters = response.map((character) => {
