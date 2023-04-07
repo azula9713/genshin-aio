@@ -11,7 +11,7 @@
     "start": "concurrently --kill-others-on-fail \"yarn sanity\" \"yarn server\" \"yarn client\""
   },
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^8.0.1"
   },
   "devDependencies": {
     "mocha": "^10.2.0"
