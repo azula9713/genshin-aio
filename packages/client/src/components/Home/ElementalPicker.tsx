@@ -28,13 +28,7 @@ export default function ElementalPicker() {
             key={element}
             onClick={() => {
               if (selectedElement !== element) {
-                // setSelectedElement(element);
-
-                //set elemet to all and after 100ms set it to the selected element
-                setSelectedElement("all");
-                setTimeout(() => {
-                  setSelectedElement(element);
-                }, 500);
+                setSelectedElement(element);
               } else {
                 setSelectedElement("all");
               }

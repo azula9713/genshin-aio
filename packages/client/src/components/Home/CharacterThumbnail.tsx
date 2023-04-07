@@ -21,6 +21,9 @@ export default function CharacterThumbnail({ character }: Props) {
   return (
     <motion.div
       layout
+      animate={{
+        opacity: 1,
+      }}
       style={{ backgroundColor: bgColorFilter[character.rarity] }}
       className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5"
     >
