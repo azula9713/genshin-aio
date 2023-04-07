@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { motion } from "framer-motion";
 
 import { ICharacter } from "../../interfaces/CharacterInterface";
 import colorFilter, { bgColorFilter } from "../../static/ThumbnailColourFilter";
@@ -18,7 +19,8 @@ export default function CharacterThumbnail({ character }: Props) {
   } = colorFilter[character.rarity];
 
   return (
-    <div
+    <motion.div
+      layout
       style={{ backgroundColor: bgColorFilter[character.rarity] }}
       className="mx-3 w-[100px] relative lg:w-[130px] rounded-xl shadow-lg drop-shadow-md shadow-[#d6d6d6] dark:shadow-[#323333] overflow-hidden mb-5"
     >
@@ -51,6 +53,6 @@ export default function CharacterThumbnail({ character }: Props) {
           className="w-4 h-4 lg:w-5 lg:h-5"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
