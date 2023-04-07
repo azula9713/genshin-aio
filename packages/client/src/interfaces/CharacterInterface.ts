@@ -46,6 +46,10 @@ export interface ITalent {
   description: string;
 }
 
+export interface IAllTalent extends ITalent {
+  isPassive: boolean;
+}
+
 export interface IRegion {
   regionName: string;
   icon: string;

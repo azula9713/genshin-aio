@@ -1,41 +1,41 @@
-import { ReactQueryDevtools } from "react-query/devtools";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Character from "./pages/Character/Character";
-import Home from "./pages/Home/Home";
-import { RecoilRoot } from "recoil";
-import { useEffect } from "react";
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import { useEffect } from 'react';
+import Character from './pages/Character/Character';
+import Home from './pages/Home/Home';
 
 export default function App() {
   const queryClient = new QueryClient();
   // Check for user preference and apply corresponding theme
   if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
+    localStorage.theme === 'dark'
+    || (!('theme' in localStorage)
+      && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.add('dark');
   } else {
-    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.remove('dark');
   }
 
-  let router = createBrowserRouter([
+  const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <Home />,
       // 404 goes here
       errorElement: <div>Nope Home</div>,
     },
     {
-      path: "/user",
+      path: '/user',
       element: <div>User</div>,
     },
     {
-      path: "character",
+      path: 'character',
       // loader:
       children: [
         {
-          path: ":characterName",
+          path: ':characterName',
           element: <Character />,
         },
       ],
@@ -43,7 +43,7 @@ export default function App() {
   ]);
 
   useEffect(() => {
-    localStorage.setItem("theme", "dark");
+    localStorage.setItem('theme', 'dark');
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import AscensionMats from "../../components/Character/AscensionMats";
 import RarityStars from "../../components/Character/RarityStars";
-import TalentsMobile from "../../components/Character/TalentsMobile";
+import TalentsMobile from "../../components/Character/Mobile/TalentsMobile";
 import Overview from "../../components/Character/Overview";
 
 import ElectroBG from "../../assets/images/bgs/constellation_template__electro.jpg";

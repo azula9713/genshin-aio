@@ -1,4 +1,4 @@
-import { ITalent } from "../../interfaces/CharacterInterface";
+import { ITalent } from "../../../interfaces/CharacterInterface";
 import TalentCard from "./TalentCard";
 
 type Props = {

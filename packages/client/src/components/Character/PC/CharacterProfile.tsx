@@ -13,7 +13,6 @@ export default function CharacterProfile({ name, title, description }: Props) {
       <h4 className="uppercase font-semibold text-3xl italic tracking-widest mt-6 font-algoindeEnka drop-shadow-xl">
         {title}
       </h4>
-      {/* description */}
       <Description description={description} />
     </div>
   );

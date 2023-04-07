@@ -7,7 +7,10 @@ import RarityStars from "../../components/Character/RarityStars";
 import CharacterTalentDetails from "../../components/Character/PC/CharacterTalentDetails";
 import TalentIcon from "../../components/Character/PC/TalentIcon";
 import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
-import { ICharacterData, ITalent } from "../../interfaces/CharacterInterface";
+import {
+  IAllTalent,
+  ICharacterData,
+} from "../../interfaces/CharacterInterface";
 import elementalImageFilter from "../../static/ElementalImagePicker";
 
 import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
@@ -40,11 +43,27 @@ export default function CharacterPCView({
   } = characterData;
 
   const [selectedTalentId, setSelectedTalentId] = useState<number>(0);
-  const [allTalents, setAllTalents] = useState<ITalent[]>([]);
+  const [allTalents, setAllTalents] = useState<IAllTalent[]>([]);
 
   useMemo(() => {
     if (skills?.length > 0 && passiveTalents?.length > 0) {
-      setAllTalents([...skills, ...passiveTalents]);
+      //add an attribute to the talent to determine if it is a passive or not to a new array with new type
+
+      const newSkills = skills.map((skill) => {
+        return {
+          ...skill,
+          isPassive: false,
+        };
+      });
+
+      const newPassiveTalents = passiveTalents.map((passiveTalent) => {
+        return {
+          ...passiveTalent,
+          isPassive: true,
+        };
+      });
+
+      setAllTalents([...newSkills, ...newPassiveTalents]);
     }
   }, [skills, passiveTalents]);
 
@@ -101,10 +120,10 @@ export default function CharacterPCView({
           </div>
         </div>
       </LazyBackgroundImg>
-      <div className="w-full px-7 py-4">
+      <div className="w-full px-7 py-4 overflow-hidden">
         <div className="w-full flex flex-col items-start justify-center mt-8">
           <h4 className="font-algoindeEnka text-6xl">Talents</h4>
-          <div className="w-full flex items-center justify-start space-x-8 my-8">
+          <div className="w-full flex items-center justify-start space-x-8 mt-8 mb-6">
             {/* merge skills and passive talents to a one array and map. Filter out talents without name  */}
             {allTalents &&
               allTalents

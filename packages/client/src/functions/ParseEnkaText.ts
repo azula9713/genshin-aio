@@ -14,17 +14,21 @@ function parseText(inputText: string) {
     "Mobile:Tap, PS/PC: Press"
   );
 
-  // Replace newlines with <br/>
-  modifiedText = modifiedText.replace(/(\r\n|\n|\\n|\r)/gm, "<br/>");
-
-  // Remove unnecessary # symbols
   modifiedText = modifiedText.replace(
     /#(?!([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3}))/g,
     ""
   );
 
-  // Remove <br/> tags from the beginning of the text
-  modifiedText = modifiedText.replace(/^<br\/>/g, "");
+  // do text.split('\n') and render each array element inside < p > elements in a loop
+  modifiedText = modifiedText.replace(
+    /(\r\n|\n|\\n|\r)/gm,
+    "</><p class='enkaTalentText'>"
+  );
+
+  modifiedText = modifiedText.replace(
+    /<b style="color:([^>]+)">/g,
+    '<b style="color:$1; font-family: AlgoindeEnka">'
+  );
 
   return modifiedText;
 }

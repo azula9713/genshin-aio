@@ -46,3 +46,12 @@
   -moz-box-shadow: 0px -3px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0px -3px 1px rgba(0, 0, 0, 0.25);
 }
+
+.enkaTalentText {
+  width: 100%;
+  font-family: "AlgoindeEnka", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0.8rem 0;
+}
