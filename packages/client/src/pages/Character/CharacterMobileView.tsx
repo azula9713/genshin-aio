@@ -1,17 +1,18 @@
-import AscensionMats from "../../components/Character/AscensionMats";
-import RarityStars from "../../components/Character/RarityStars";
-import TalentsMobile from "../../components/Character/Mobile/TalentsMobile";
-import Overview from "../../components/Character/Overview";
+import RarityStars from "@/components/Character/RarityStars";
+import Overview from "@/components/Character/Overview";
+import TalentsMobile from "@/components/Character/Mobile/TalentsMobile";
+import AscensionMats from "@/components/Character/AscensionMats";
+import LazyBackgroundImg from "@/components/Common/LazyBackgroundImg";
 
-import ElectroBG from "../../assets/images/bgs/constellation_template__electro.jpg";
-import CryoBG from "../../assets/images/bgs/constellation_template__cryo.jpg";
-import PyroBG from "../../assets/images/bgs/constellation_template__pyro.jpg";
-import HydroBG from "../../assets/images/bgs/constellation_template__hydro.png";
-import AnemoBG from "../../assets/images/bgs/constellation_template__anemo.jpg";
-import GeoBG from "../../assets/images/bgs/constellation_template__geo.jpg";
-import DendroBG from "../../assets/images/bgs/constellation_template__dendro.jpg";
-import { ICharacterData } from "../../interfaces/CharacterInterface";
-import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
+import { ICharacterData } from "@/interfaces/CharacterInterface";
+
+import ElectroBG from "@/assets/images/bgs/constellation_template__electro.jpg";
+import CryoBG from "@/assets/images/bgs/constellation_template__cryo.jpg";
+import PyroBG from "@/assets/images/bgs/constellation_template__pyro.jpg";
+import HydroBG from "@/assets/images/bgs/constellation_template__hydro.png";
+import AnemoBG from "@/assets/images/bgs/constellation_template__anemo.jpg";
+import GeoBG from "@/assets/images/bgs/constellation_template__geo.jpg";
+import DendroBG from "@/assets/images/bgs/constellation_template__dendro.jpg";
 
 type Props = {
   characterData: ICharacterData;

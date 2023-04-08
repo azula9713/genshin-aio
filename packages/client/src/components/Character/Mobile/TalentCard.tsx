@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
 import { ITalent } from "../../../interfaces/CharacterInterface";
-import TextLabel from "../../Common/TextLabel";
+import TextLabel from "../../Common/Typography/TextLabel";
 import parseText from "../../../functions/ParseEnkaText";
 
 type Props = {

@@ -1,7 +1,7 @@
 import { LinkIcon } from "@heroicons/react/24/solid";
 
 import { ITalent } from "../../interfaces/CharacterInterface";
-import TextLabel from "../Common/TextLabel";
+import TextLabel from "../Common/Typography/TextLabel";
 
 type Props = {
   talent: ITalent;

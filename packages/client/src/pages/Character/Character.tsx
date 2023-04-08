@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 
-import { urlParamExtractor } from "../../functions/UrlParamExtractor";
-import { ICharacterData } from "../../interfaces/CharacterInterface";
-import { fetchEnkaCharacterById } from "../../services/enka/characters";
-import Container from "../../components/Layout/Container";
-import CharacterPCView from "./CharacterPCView";
+import Container from "@/components/Layout/Container";
 import CharacterMobileView from "./CharacterMobileView";
+import CharacterPCView from "./CharacterPCView";
+
+import { urlParamExtractor } from "@/functions/UrlParamExtractor";
+import { fetchEnkaCharacterById } from "@/services/enka/characters";
+import { ICharacterData } from "@/interfaces/CharacterInterface";
 
 export default function Character() {
   const location = useLocation();

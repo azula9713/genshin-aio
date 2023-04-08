@@ -3,8 +3,8 @@ import { useQuery } from "react-query";
 
 import { IMaterialData } from "../../interfaces/MaterialInterface";
 import { fetchEnkaMaterialById } from "../../services/enka/materials";
-import TextLabel from "./TextLabel";
-import TextValue from "./TextValue";
+import TextLabel from "./Typography/TextLabel";
+import TextValue from "./Typography/TextValue";
 
 type Props = {
   id: string;
