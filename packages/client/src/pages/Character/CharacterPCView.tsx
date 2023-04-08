@@ -4,11 +4,12 @@ import LazyBackgroundImg from "@/components/Common/LazyBackgroundImg";
 import RarityStars from "@/components/Character/RarityStars";
 import CharacterProfile from "@/components/Character/PC/CharacterProfile";
 import Overview from "@/components/Character/Overview";
-import CharacterTalentsContainer from "@/components/Character/PC/CharacterTalentsContainer";
+import CharacterTalentsContainer from "@/components/Character/PC/Talents/CharacterTalentsContainer";
 
 import { ICharacterData } from "@/interfaces/CharacterInterface";
 import elementalImageFilter from "@/static/ElementalImagePicker";
 import StaticNameCard from "@/assets/images/namecards/UI_NameCardPic_0_P.png";
+import CharacterConstellationContainer from "@/components/Character/PC/Constellations/CharacterConstellationContainer";
 
 type Props = {
   characterData: ICharacterData;
@@ -37,7 +38,7 @@ export default function CharacterPCView({
   } = characterData;
 
   return (
-    <div className="py-4 px-12 flex flex-col items-center justify-start space-y-8">
+    <div className="py-4 px-12 flex-col items-center justify-start space-y-8 hidden xl:flex">
       <LazyBackgroundImg
         img={nameCard === "No Name Card" ? StaticNameCard : nameCard}
         isDarkened
@@ -88,6 +89,7 @@ export default function CharacterPCView({
         skills={skills}
         passiveTalents={passiveTalents}
       />
+      <CharacterConstellationContainer consName={constellation} />
     </div>
   );
 }

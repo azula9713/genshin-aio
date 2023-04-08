@@ -63,7 +63,7 @@ export default function Character() {
         characterName={characterName}
       />
 
-      {/* PC View */}
+      {/* PC View  */}
       <CharacterPCView
         characterData={characterData}
         characterName={characterName}
