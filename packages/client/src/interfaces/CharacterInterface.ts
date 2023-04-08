@@ -26,6 +26,13 @@ export type IWeaponByCharacter = {
   name: string;
   icon: string;
 };
+
+export type IConstellation = {
+  id: number;
+  name: string;
+  description: string;
+  icon?: string;
+};
 export interface ICharacter {
   id: string;
   enkaId: string;
@@ -85,9 +92,5 @@ export interface ICharacterData extends ICharacter {
   }[];
   skills: ITalent[];
   passiveTalents: ITalent[];
-  constellations: {
-    id: number;
-    name: string;
-    description: string;
-  }[];
+  constellations: IConstellation[];
 }

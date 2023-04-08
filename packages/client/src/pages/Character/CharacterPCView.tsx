@@ -10,6 +10,9 @@ import { ICharacterData } from "@/interfaces/CharacterInterface";
 import elementalImageFilter from "@/static/ElementalImagePicker";
 import StaticNameCard from "@/assets/images/namecards/UI_NameCardPic_0_P.png";
 import CharacterConstellationContainer from "@/components/Character/PC/Constellations/CharacterConstellationContainer";
+import { constellationIconFilter } from "@/static/ChapterIconFilter";
+import capitalizeFirstLetter from "@/functions/CapitalizeFirstLetter";
+import { useEffect, useState } from "react";
 
 type Props = {
   characterData: ICharacterData;
@@ -31,11 +34,25 @@ export default function CharacterPCView({
     weaponType,
     affiliation,
     constellation,
+    constellations,
     description,
     title,
     region,
     nameId,
   } = characterData;
+
+  const [chapterIcon, setChapterIcon] = useState<string>("");
+
+  useEffect(() => {
+    async function loadImage() {
+      const chapterUrl = await constellationIconFilter(
+        capitalizeFirstLetter(characterName)
+      );
+
+      setChapterIcon(chapterUrl);
+    }
+    loadImage();
+  }, [characterName]);
 
   return (
     <div className="py-4 px-12 flex-col items-center justify-start space-y-8 hidden xl:flex">
@@ -89,7 +106,11 @@ export default function CharacterPCView({
         skills={skills}
         passiveTalents={passiveTalents}
       />
-      <CharacterConstellationContainer consName={constellation} />
+      <CharacterConstellationContainer
+        consName={constellation}
+        constellations={constellations}
+        chapterIcon={chapterIcon}
+      />
     </div>
   );
 }

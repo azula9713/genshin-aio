@@ -21,3 +21,19 @@ export default async function chapterIconFilter(characterName: string) {
 
   return image;
 }
+
+export async function constellationIconFilter(characterName: string) {
+  let image = null;
+
+  try {
+    const imageModule = await import(
+      `../assets/images/constellations/Eff_UI_Talent_${characterName}.png`
+    );
+
+    image = imageModule.default;
+  } catch (error) {
+    image = null;
+  }
+
+  return image;
+}
