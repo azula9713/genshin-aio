@@ -1,3 +1,5 @@
+import { Tooltip } from "react-tooltip";
+
 import { ITalent } from "../../../interfaces/CharacterInterface";
 import elementalColorPicker from "../../../static/ElementalColorPicker";
 
@@ -20,12 +22,15 @@ export default function TalentIcon({
 
   return (
     <div
-      className="w-max flex items-center justify-start"
+      className="w-max flex items-center justify-start cursor-pointer"
       onClick={handleClick}
     >
-      {/* cover the image from a circle */}
       <div
-        className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center bg-opacity-10"
+        data-tooltip-id="talent-tooltip"
+        data-tooltip-content={selectedTalentId !== talent.id ? talent.name : ""}
+        className={`w-16 h-16 rounded-full flex items-center justify-center bg-opacity-10 cursor-pointer transition-all duration-200 ${
+          selectedTalentId !== talent.id && "hover:!bg-slate-700"
+        }`}
         style={{
           backgroundColor:
             selectedTalentId === talent.id
@@ -45,6 +50,7 @@ export default function TalentIcon({
           }}
         />
       </div>
+      <Tooltip id="talent-tooltip" />
     </div>
   );
 }
