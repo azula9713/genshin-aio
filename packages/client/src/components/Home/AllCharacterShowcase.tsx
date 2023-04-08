@@ -3,11 +3,11 @@ import { useQuery } from "react-query";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { motion } from "framer-motion";
 
-import { allEnkaCharactersAtom } from "../../atoms/EnkaCharacters.atom";
-import { selectedElementAtom } from "../../atoms/SelectedItems.atoms";
-import filterAllCharacters from "../../functions/FilterAllCharacters";
-import { ICharacter } from "../../interfaces/CharacterInterface";
-import { fetchAllCharacters } from "../../services/enka/characters";
+import { allEnkaCharactersAtom } from "@/atoms/EnkaCharacters.atom";
+import { selectedElementAtom } from "@/atoms/SelectedItems.atoms";
+import { fetchAllCharacters } from "@/services/enka/characters";
+import filterAllCharacters from "@/functions/FilterAllCharacters";
+import { ICharacter } from "@/interfaces/CharacterInterface";
 import CharacterThumbnail from "./CharacterThumbnail";
 
 export default function AllCharacterShowcase() {

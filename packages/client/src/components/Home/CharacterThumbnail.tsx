@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion";
 
-import { ICharacter } from "../../interfaces/CharacterInterface";
-import colorFilter, { bgColorFilter } from "../../static/ThumbnailColourFilter";
-import elementalImageFilter from "../../static/ElementalImagePicker";
-import CustomLinkCursor from "../../assets/cursor/Genshin-Impact-Link-Select.png";
+import { ICharacter } from "@/interfaces/CharacterInterface";
+import colorFilter, { bgColorFilter } from "@/static/ThumbnailColourFilter";
+import elementalImageFilter from "@/static/ElementalImagePicker";
+import CustomLinkCursor from "@/assets/cursor/Genshin-Impact-Link-Select.png";
 
 type Props = {
   character: ICharacter;

@@ -1,6 +1,5 @@
-import React from "react";
-import LogoHolder from "../../Common/LogoHolder";
-import SocialIcon from "../../Common/SocialIcon";
+import LogoHolder from "@/components/Common/LogoHolder";
+import SocialIcon from "@/components/Common/SocialIcon";
 
 type Props = {
   socials: {

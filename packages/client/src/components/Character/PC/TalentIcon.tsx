@@ -1,7 +1,6 @@
+import { ITalent } from "@/interfaces/CharacterInterface";
+import elementalColorPicker from "@/static/ElementalColorPicker";
 import { Tooltip } from "react-tooltip";
-
-import { ITalent } from "../../../interfaces/CharacterInterface";
-import elementalColorPicker from "../../../static/ElementalColorPicker";
 
 type Props = {
   talent: ITalent;

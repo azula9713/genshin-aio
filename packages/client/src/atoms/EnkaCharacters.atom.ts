@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { ICharacter } from "../interfaces/CharacterInterface";
+import { ICharacter } from "@/interfaces/CharacterInterface";
 
 const allEnkaCharactersAtom = atom({
   key: "allEnkaCharactersAtom",

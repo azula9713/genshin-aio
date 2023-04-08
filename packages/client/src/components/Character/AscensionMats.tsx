@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
-import { IAscensionData } from "../../interfaces/CharacterInterface";
 import AscensionMaterialHolder from "../Common/AscensionMaterialHolder";
+import { IAscensionData } from "@/interfaces/CharacterInterface";
 
 type Props = {
   ascensionData: IAscensionData[];

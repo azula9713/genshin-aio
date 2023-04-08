@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 
-import { selectedElementAtom } from "../../atoms/SelectedItems.atoms";
-import elementalImageFilter from "../../static/ElementalImagePicker";
+import { selectedElementAtom } from "@/atoms/SelectedItems.atoms";
+import elementalImageFilter from "@/static/ElementalImagePicker";
 
 export default function ElementalPicker() {
   const elements = [

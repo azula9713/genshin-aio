@@ -1,12 +1,12 @@
-import weaponTypeParser from "../../../functions/WeaponTypeParser";
+import weaponTypeParser from "@/functions/WeaponTypeParser";
 import {
   IElementType,
   IRegion,
   IWeaponType,
-} from "../../../interfaces/CharacterInterface";
-import elementalImageFilter from "../../../static/ElementalImagePicker";
-import weaponIconFilter from "../../../static/WeaponIconFilter";
-import OverviewItemHolder from "../../Common/OverviewItemHolder";
+} from "@/interfaces/CharacterInterface";
+import OverviewItemHolder from "@/components/Common/OverviewItemHolder";
+import elementalImageFilter from "@/static/ElementalImagePicker";
+import weaponIconFilter from "@/static/WeaponIconFilter";
 
 type Props = {
   name: string;

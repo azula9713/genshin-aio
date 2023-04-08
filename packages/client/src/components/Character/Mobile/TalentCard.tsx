@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
-import { ITalent } from "../../../interfaces/CharacterInterface";
-import TextLabel from "../../Common/Typography/TextLabel";
-import parseText from "../../../functions/ParseEnkaText";
+import TextLabel from "@/components/Common/Typography/TextLabel";
+import parseText from "@/functions/ParseEnkaText";
+import { ITalent } from "@/interfaces/CharacterInterface";
 
 type Props = {
   talent: ITalent;

@@ -38,7 +38,6 @@ export default function LazyBackgroundImg({
         ...style,
       }}
     >
-      {!loaded && <div style={{ visibility: "hidden" }}>{children}</div>}
       <img src={img} alt="" onLoad={handleLoad} style={{ display: "none" }} />
       {loaded && children}
     </div>

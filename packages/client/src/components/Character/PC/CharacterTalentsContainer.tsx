@@ -1,12 +1,12 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import TalentIcon from "./TalentIcon";
 import {
   IAllTalent,
   IElementType,
   ITalent,
-} from "../../../interfaces/CharacterInterface";
+} from "@/interfaces/CharacterInterface";
+import Title from "@/components/Common/Typography/Title";
 import CharacterTalentDetails from "./CharacterTalentDetails";
-import Title from "../../Common/Typography/Title";
 
 type Props = {
   element: {

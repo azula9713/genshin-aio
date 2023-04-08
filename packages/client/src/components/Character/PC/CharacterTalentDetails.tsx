@@ -1,5 +1,5 @@
-import parseText from "../../../functions/ParseEnkaText";
-import { IAllTalent } from "../../../interfaces/CharacterInterface";
+import parseText from "@/functions/ParseEnkaText";
+import { IAllTalent } from "@/interfaces/CharacterInterface";
 
 type Props = {
   selectedTalent?: IAllTalent;

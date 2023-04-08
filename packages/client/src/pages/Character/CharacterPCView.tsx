@@ -1,14 +1,14 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import CharacterProfile from "../../components/Character/PC/CharacterProfile";
-import Overview from "../../components/Character/Overview";
-import RarityStars from "../../components/Character/RarityStars";
-import LazyBackgroundImg from "../../components/Common/LazyBackgroundImg";
-import CharacterTalentsContainer from "../../components/Character/PC/CharacterTalentsContainer";
+import LazyBackgroundImg from "@/components/Common/LazyBackgroundImg";
+import RarityStars from "@/components/Character/RarityStars";
+import CharacterProfile from "@/components/Character/PC/CharacterProfile";
+import Overview from "@/components/Character/Overview";
+import CharacterTalentsContainer from "@/components/Character/PC/CharacterTalentsContainer";
 
-import { ICharacterData } from "../../interfaces/CharacterInterface";
-import elementalImageFilter from "../../static/ElementalImagePicker";
-import StaticNameCard from "../../assets/images/namecards/UI_NameCardPic_0_P.png";
+import { ICharacterData } from "@/interfaces/CharacterInterface";
+import elementalImageFilter from "@/static/ElementalImagePicker";
+import StaticNameCard from "@/assets/images/namecards/UI_NameCardPic_0_P.png";
 
 type Props = {
   characterData: ICharacterData;

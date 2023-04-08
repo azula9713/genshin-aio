@@ -1,14 +1,13 @@
+import { useEffect, useState } from "react";
 import {
   IElementType,
   IRegion,
   IWeaponType,
-} from "../../interfaces/CharacterInterface";
-
-import chapterIconFilter from "../../static/ChapterIconFilter";
-import { useEffect, useState } from "react";
-import capitalizeFirstLetter from "../../functions/CapitalizeFirstLetter";
-import PCOverview from "./PC/PCOverview";
+} from "@/interfaces/CharacterInterface";
+import chapterIconFilter from "@/static/ChapterIconFilter";
+import capitalizeFirstLetter from "@/functions/CapitalizeFirstLetter";
 import MobileOverview from "./Mobile/MobileOverview";
+import PCOverview from "./PC/PCOverview";
 
 type Props = {
   element: IElementType;

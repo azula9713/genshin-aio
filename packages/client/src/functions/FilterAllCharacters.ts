@@ -1,4 +1,4 @@
-import { ICharacter } from "../interfaces/CharacterInterface";
+import { ICharacter } from "@/interfaces/CharacterInterface";
 
 function filterAllCharacters(
   characters: ICharacter[],

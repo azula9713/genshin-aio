@@ -1,6 +1,5 @@
+import socials from "@/static/Social";
 import InfoContainer from "./InfoContainer";
-
-import socials from "../../../static/Social";
 import FooterHelperContainer from "./FooterHelperContainer";
 import FooterOtherContainer from "./FooterOtherContainer";
 
