@@ -5,23 +5,22 @@ import RarityStars from "@/components/Character/RarityStars";
 import CharacterProfile from "@/components/Character/PC/CharacterProfile";
 import Overview from "@/components/Character/Overview";
 import CharacterTalentsContainer from "@/components/Character/PC/Talents/CharacterTalentsContainer";
+import CharacterConstellationContainer from "@/components/Character/PC/Constellations/CharacterConstellationContainer";
 
 import { ICharacterData } from "@/interfaces/CharacterInterface";
 import elementalImageFilter from "@/static/ElementalImagePicker";
 import StaticNameCard from "@/assets/images/namecards/UI_NameCardPic_0_P.png";
-import CharacterConstellationContainer from "@/components/Character/PC/Constellations/CharacterConstellationContainer";
-import { constellationIconFilter } from "@/static/ChapterIconFilter";
-import capitalizeFirstLetter from "@/functions/CapitalizeFirstLetter";
-import { useEffect, useState } from "react";
 
 type Props = {
   characterData: ICharacterData;
   characterName: string;
+  chapterIcon: string;
 };
 
 export default function CharacterPCView({
   characterData,
   characterName,
+  chapterIcon,
 }: Props) {
   const {
     element,
@@ -40,19 +39,6 @@ export default function CharacterPCView({
     region,
     nameId,
   } = characterData;
-
-  const [chapterIcon, setChapterIcon] = useState<string>("");
-
-  useEffect(() => {
-    async function loadImage() {
-      const chapterUrl = await constellationIconFilter(
-        capitalizeFirstLetter(characterName)
-      );
-
-      setChapterIcon(chapterUrl);
-    }
-    loadImage();
-  }, [characterName]);
 
   return (
     <div className="py-4 px-12 flex-col items-center justify-start space-y-8 hidden xl:flex">

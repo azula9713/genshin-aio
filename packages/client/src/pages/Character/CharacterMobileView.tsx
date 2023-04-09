@@ -1,6 +1,6 @@
 import RarityStars from "@/components/Character/RarityStars";
 import Overview from "@/components/Character/Overview";
-import TalentsMobile from "@/components/Character/Mobile/TalentsMobile";
+import TalentsMobile from "@/components/Character/Mobile/Talents/TalentsMobile";
 import AscensionMats from "@/components/Character/AscensionMats";
 import LazyBackgroundImg from "@/components/Common/LazyBackgroundImg";
 
@@ -13,15 +13,18 @@ import HydroBG from "@/assets/images/bgs/constellation_template__hydro.png";
 import AnemoBG from "@/assets/images/bgs/constellation_template__anemo.jpg";
 import GeoBG from "@/assets/images/bgs/constellation_template__geo.jpg";
 import DendroBG from "@/assets/images/bgs/constellation_template__dendro.jpg";
+import MobileConstellationContainer from "@/components/Character/Mobile/Constellations/MobileConstellationContainer";
 
 type Props = {
   characterData: ICharacterData;
   characterName: string;
+  chapterIcon: string;
 };
 
 export default function CharacterMobileView({
   characterData,
   characterName,
+  chapterIcon,
 }: Props) {
   const elementalBgPicker = {
     Dendro: DendroBG,
@@ -42,6 +45,7 @@ export default function CharacterMobileView({
     affiliation,
     ascensionData,
     constellation,
+    constellations,
     passiveTalents,
     skills,
     description,
@@ -83,6 +87,14 @@ export default function CharacterMobileView({
 
       {skills && passiveTalents && (
         <TalentsMobile skills={skills} passiveTalents={passiveTalents} />
+      )}
+
+      {constellations && (
+        <MobileConstellationContainer
+          constellation={constellation}
+          constellations={constellations}
+          chapterIcon={chapterIcon}
+        />
       )}
 
       {ascensionData && <AscensionMats ascensionData={ascensionData} />}

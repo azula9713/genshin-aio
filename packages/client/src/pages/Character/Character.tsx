@@ -9,6 +9,8 @@ import CharacterPCView from "./CharacterPCView";
 import { urlParamExtractor } from "@/functions/UrlParamExtractor";
 import { fetchEnkaCharacterById } from "@/services/enka/characters";
 import { ICharacterData } from "@/interfaces/CharacterInterface";
+import capitalizeFirstLetter from "@/functions/CapitalizeFirstLetter";
+import { constellationIconFilter } from "@/static/ChapterIconFilter";
 
 export default function Character() {
   const location = useLocation();
@@ -22,6 +24,19 @@ export default function Character() {
   const [characterData, setCharacterData] = useState<ICharacterData>(
     {} as ICharacterData
   );
+
+  const [chapterIcon, setChapterIcon] = useState<string>("");
+
+  useEffect(() => {
+    async function loadImage() {
+      const chapterUrl = await constellationIconFilter(
+        capitalizeFirstLetter(characterName)
+      );
+
+      setChapterIcon(chapterUrl);
+    }
+    loadImage();
+  }, [characterName]);
 
   useEffect(() => {
     if (data) {
@@ -61,12 +76,14 @@ export default function Character() {
       <CharacterMobileView
         characterData={characterData}
         characterName={characterName}
+        chapterIcon={chapterIcon}
       />
 
       {/* PC View  */}
       <CharacterPCView
         characterData={characterData}
         characterName={characterName}
+        chapterIcon={chapterIcon}
       />
     </Container>
   );

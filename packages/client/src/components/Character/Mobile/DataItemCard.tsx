@@ -3,14 +3,15 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
 import TextLabel from "@/components/Common/Typography/TextLabel";
+import { IConstellation, ITalent } from "@/interfaces/CharacterInterface";
 import parseText from "@/functions/ParseEnkaText";
-import { ITalent } from "@/interfaces/CharacterInterface";
 
 type Props = {
-  talent: ITalent;
+  item: IConstellation | ITalent;
+  index?: number;
 };
 
-export default function TalentCard({ talent }: Props) {
+export default function DataItemCard({ item, index }: Props) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   function handleExpansion() {
@@ -21,11 +22,19 @@ export default function TalentCard({ talent }: Props) {
     <div className="w-full bg-gray-300 dark:bg-slate-700 my-1 p-1 rounded-md">
       <div className="flex items-center justify-between w-full">
         <div className="w-full flex items-center justify-start space-x-3">
-          <img src={talent.icon} alt={talent.name} width={60} />
-          <TextLabel
-            label={talent.name}
-            classNames="text-black dark:text-white"
-          />
+          <img src={item.icon} alt={item.name} width={60} />
+          {/* if  data type is IConstellation use index as constellation number */}
+          {index !== undefined ? (
+            <TextLabel
+              label={`${item.name} (C${index + 1})`}
+              classNames="text-black dark:text-white"
+            />
+          ) : (
+            <TextLabel
+              label={`${item.name}`}
+              classNames="text-black dark:text-white"
+            />
+          )}
         </div>
 
         <div
@@ -55,7 +64,7 @@ export default function TalentCard({ talent }: Props) {
         <div
           className="text-gray-800 dark:text-white px-2"
           dangerouslySetInnerHTML={{
-            __html: parseText(talent.description),
+            __html: parseText(item.description),
           }}
         />
       </motion.div>
