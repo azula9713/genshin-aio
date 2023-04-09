@@ -14,7 +14,7 @@ export default function CharacterTalentDetails({ selectedTalent }: Props) {
         </h2>
         <div>
           <div
-            className="w-ful"
+            className="w-full"
             dangerouslySetInnerHTML={{
               __html: parseText(selectedTalent.description || ""),
             }}

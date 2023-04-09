@@ -10,11 +10,11 @@ export default function ConstellationDetails({ selectedConstellation }: Props) {
 
   return (
     <div className="w-full flex flex-col items-center justify-start rounded-lg bg-slate-700 h-[40rem] mt-20 p-8 relative">
-      <h6 className="text-4xl px-16 font-bold text-left w-full">
+      <h6 className="text-4xl px-8 font-bold text-left w-full">
         {selectedConstellation.name}
       </h6>
       <div
-        className="mt-12 text-lg text-left px-16 w-full z-10"
+        className="mt-12 text-lg text-left px-8 w-full z-10"
         dangerouslySetInnerHTML={{
           __html: parseText(selectedConstellation?.description),
         }}
