@@ -2,6 +2,7 @@ import Lottie from "react-lottie";
 import { useNavigate } from "react-router-dom";
 
 import * as genshinLogo from "../../assets/genshin-logo.json";
+import scrollToTop from "@/functions/ScrollToTop";
 
 type Props = {
   size?: number;
@@ -10,13 +11,6 @@ type Props = {
 
 export default function LogoHolder({ size = 50, className }: Props) {
   const navigate = useNavigate();
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   const defaultOptions = {
     loop: true,

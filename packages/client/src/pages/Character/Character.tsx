@@ -11,6 +11,7 @@ import { fetchEnkaCharacterById } from "@/services/enka/characters";
 import { ICharacterData } from "@/interfaces/CharacterInterface";
 import capitalizeFirstLetter from "@/functions/CapitalizeFirstLetter";
 import { constellationIconFilter } from "@/static/ChapterIconFilter";
+import scrollToTop from "@/functions/ScrollToTop";
 
 export default function Character() {
   const location = useLocation();
@@ -39,6 +40,7 @@ export default function Character() {
   }, [characterName]);
 
   useEffect(() => {
+    scrollToTop();
     if (data) {
       console.log("Character data", data);
       setCharacterData(data);
