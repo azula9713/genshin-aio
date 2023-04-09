@@ -9,16 +9,18 @@ export default function ConstellationDetails({ selectedConstellation }: Props) {
   if (!selectedConstellation) return null;
 
   return (
-    <div className="w-full flex flex-col items-start justify-start rounded-lg bg-slate-700 min-h-[40rem] mt-20 p-8">
-      <h6 className="text-4xl px-16 font-bold">{selectedConstellation.name}</h6>
+    <div className="w-full flex flex-col items-center justify-start rounded-lg bg-slate-700 h-[40rem] mt-20 p-8 relative">
+      <h6 className="text-4xl px-16 font-bold text-left w-full">
+        {selectedConstellation.name}
+      </h6>
       <div
-        className="mt-12 text-lg text-left px-16 w-full"
+        className="mt-12 text-lg text-left px-16 w-full z-10"
         dangerouslySetInnerHTML={{
           __html: parseText(selectedConstellation?.description),
         }}
       />
 
-      <div className="w-full flex items-center justify-center">
+      <div className="absolute w-full flex items-center justify-center z-0 mt-[10rem]">
         <img
           src={selectedConstellation.icon}
           alt={selectedConstellation.name}

@@ -16,7 +16,9 @@ export default function ConstellationIcon({
   return (
     <div
       className={`absolute w-24 h-24 rounded-full cursor-pointer p-1 hover:bg-slate-700 transition-all duration-200 ${
-        selectedConstellation?.id === constellation?.id && "bg-slate-700"
+        selectedConstellation?.id === constellation?.id
+          ? "bg-slate-700"
+          : "bg-slate-800"
       }`}
       style={{
         transform: `rotate(${index * 60}deg) translate(0, 240px)`,
