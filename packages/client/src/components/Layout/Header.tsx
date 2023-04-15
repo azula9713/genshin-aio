@@ -17,12 +17,10 @@ export default function Header() {
         <div className="hidden">
           <DarkModeToggle />
         </div>
-        <div>
-          <Bars3Icon
-            className="h-7 w-7 text-white cursor-pointer"
-            onClick={() => setSidebarOpen(true)}
-          />
-        </div>
+        <Bars3Icon
+          className="h-7 w-7 text-white cursor-pointer"
+          onClick={() => setSidebarOpen(true)}
+        />
       </div>
     </div>
   );
