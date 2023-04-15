@@ -6,7 +6,7 @@ import FooterOtherContainer from "./FooterOtherContainer";
 export default function Footer() {
   return (
     <footer className=" max-w-[2150px] w-full p-2 footer">
-      <div className="w-full p-2 lg:flex lg:items-start lg:justify-center text-white">
+      <div className="w-full p-2 lg:flex lg:items-start lg:justify-center text-white h-full">
         <InfoContainer socials={socials} />
         <FooterHelperContainer />
         <FooterOtherContainer />

@@ -11,9 +11,9 @@ type Props = {
 
 export default function InfoContainer({ socials }: Props) {
   return (
-    <div className="w-full mb-2 p-2 lg:flex lg:items-center lg:justify-start lg:space-x-4 ">
+    <div className="w-full mb-2 p-2 lg:flex lg:items-start lg:justify-start lg:space-x-4 h-full border-r-2">
       <LogoHolder size={100} />
-      <div className="w-full flex flex-col items-center lg:items-start mt-2 justify-start space-x-2">
+      <div className="w-full flex flex-col items-center lg:items-start justify-start space-x-2">
         <p className="text-sm text-slate-400 text-center xl:text-base p-2">
           Connect with us
         </p>
