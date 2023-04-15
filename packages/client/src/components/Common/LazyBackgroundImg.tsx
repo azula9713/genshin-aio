@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import loaderGif from "@/assets/images/loaders/loader.gif";
 
 type Props = {
   img: string;
@@ -16,9 +17,11 @@ export default function LazyBackgroundImg({
   isDarkened,
 }: Props) {
   const [loaded, setLoaded] = useState(false);
+  const [imgUnloaded, setImgUnloaded] = useState(loaderGif);
 
   const handleLoad = () => {
     setLoaded(true);
+    setImgUnloaded(img);
   };
 
   return (
@@ -29,7 +32,7 @@ export default function LazyBackgroundImg({
           isDarkened
             ? "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),"
             : ""
-        }url(${img})`,
+        }url(${imgUnloaded})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
         backgroundSize: "cover",
